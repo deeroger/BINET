@@ -28,6 +28,11 @@ namespace BINET.Web.UI
                 {
                     Response.Redirect("Main.aspx");
                 }
+                else if (uid == "promero")
+                {
+                    FailureText.Text = "El usuario se encuentra desactivado. Comuníquese con el Banco.";
+                    ErrorMessage.Visible = true;
+                }
                 else
                 {
                     FailureText.Text = "El usuario y/o contraseña ingresado son inválidos.";
