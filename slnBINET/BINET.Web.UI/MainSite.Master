@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainSite.master.cs" Inherits="BINET.Web.UI.MainSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>BINET - Sistema de Banca por Internet</title>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <script language="javascript" type="text/javascript">
+        function toggle(div_id) {
+            var el = document.getElementById(div_id);
+            if (el.style.display == 'none' || el.style.display == '') {
+                el.style.display = 'block';
+            }
+            else {
+                el.style.display = 'none';
+            }
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="bodyMP" runat="server">
+    <form id="frmMaster" runat="server">
+        <div id="header">
+            <div id="header_row">
+                <div id="header_row_left">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="userdata">
+            <div id="userdata_row">
+                <div id="userdata_row_left" runat="server">
+                    <a href="Index.aspx">
+                        <img alt="logo" src="Content/img/logo.png" border="0" />
+                    </a>
+                </div>
+                <div id="userdata_row_right" runat="server">
+                    <table id="tbDatos" runat="server">
+                        <tr>
+                            <td>
+                                <a id="lnkUser" runat="server" href="#" onclick="toggle('windowDetail')" class="userdata_text" style="text-decoration:none; cursor:pointer;">Usuario</a>
+                                <div id="windowDetail" runat="server">
+                                    <ul>
+                                        <li><a href="pw_ActDatInt.aspx">Actualizar mis datos</a></li>
+                                    </ul>
+                                </div>
+                                <br />
+                                <asp:HyperLink ID="lnkLogOut" runat="server" NavigateUrl="LogOut.aspx">Cerrar sesión</asp:HyperLink>
+                                <br />
+                            </td>
+                            <td>
+                                <asp:Image ID="imgUsuWeb" runat="server" ImageUrl="~/Content/img/SF.png" Width="100px" Height="95px" BorderWidth="4px" BorderColor="White"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="menuArea">
+            <div id="menuArea_Row">    
+                <div id="menuArea_content" runat="server">
+                    <asp:Menu ID="mnuPrincipal" runat="server" Orientation="Horizontal"
+                        style="text-align: left" BackColor="#e6e6e6" DynamicHorizontalOffset="2"
+                                    Font-Names="Verdana" Font-Size="1.10em" ForeColor="#284E98"
+                                    StaticSubMenuIndent="10px" Visible="False">
+                        <DynamicHoverStyle BackColor="#5271ac" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#ecf0f6" BorderStyle="Solid" BorderColor="#c6c6c6"  />
+                        <DynamicSelectedStyle BackColor="#507CD1" />
+                        <Items>
+                            <asp:MenuItem Text="Menu" Value="Menu">
+                                <asp:MenuItem Text="Préstamos" Value="Préstamos"></asp:MenuItem>
+                                <asp:MenuItem Text="Actualizar Datos" Value="Actualizar Datos"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                        <LevelMenuItemStyles>
+                            <asp:MenuItemStyle CssClass="main_menu" />
+                            <asp:MenuItemStyle CssClass="level_menu" />
+                        </LevelMenuItemStyles>
+                        <StaticHoverStyle BackColor="#5271ac" ForeColor="white" BorderStyle="solid" BorderColor="#c6c6c6" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#507CD1" />
+                    </asp:Menu>    
+                </div>
+            </div>    
+        </div>
+        <div id="main">
+            <div id="main_row">    
+                <div id="main_row_content" runat="server">
+                    <asp:ContentPlaceHolder ID="cphCuerpo" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>    
+        </div>
+        <div id="footer">
+            <div id="footer_row">
+                <div id="footer_row_left">
+                    <table cellspacing="4px">
+                        <tr>
+                            <td>
+                                <img alt="logo" src="Content/img/logo.png" />
+                            </td>
+                            <td>
+                                <img alt="" src="Content/img/separador.png" />
+                            </td>
+                            <td>
+                                <asp:Label ID="lblDirAne" runat="server" Text="Prolongación Primavera 2390, Lima 15023"></asp:Label>
+                                <br />
+                                Teléfono: <asp:Label ID="lblTelEmp" runat="server" Text="01-999-6666"></asp:Label>
+                                <br />
+                                <asp:Label ID="lblEmail" runat="server" Text="soporte@upc.edu.pe"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="footer_row_right">
+                    <img alt="logo" src="Content/img/facebook.png" />
+                    <img alt="logo" src="Content/img/twitter.png" />
+                    <img alt="logo" src="Content/img/feed.png" />
+                    <br />
+                    <asp:Label ID="lblNomEmp" runat="server" Text="BINET S.A.C."></asp:Label> © 
+                    <asp:Label ID="lblYear" runat="server" Text="2016"></asp:Label>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
