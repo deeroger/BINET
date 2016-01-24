@@ -28,7 +28,7 @@ namespace BINET.Web.UI
                 {
                     Response.Redirect("Main.aspx");
                 }
-                else if (uid == "promero")
+                else if (uid == "promero" || uid=="aromero")
                 {
                     FailureText.Text = "El usuario se encuentra desactivado. Comuníquese con el Banco.";
                     ErrorMessage.Visible = true;
