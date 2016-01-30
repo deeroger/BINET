@@ -25,6 +25,8 @@ namespace BINET.Data.COM
                 comando.Parameters.AddWithValue("@UID", uid);
                 comando.Parameters.AddWithValue("@Password", pwd);
                 oCnn.Open();
+                //PARA UPDATES Y PARA DELETES
+                //int res = comando.ExecuteNonQuery();
                 SqlDataReader reader = comando.ExecuteReader();
                 if (reader.HasRows)
                 {
