@@ -10,24 +10,15 @@
 namespace BINET.Web.UI.WF {
     
     
-    public partial class Main {
+    public partial class MostrarCronograma {
         
         /// <summary>
-        /// mnuUsuario control.
+        /// btnRegresar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu mnuUsuario;
-        
-        /// <summary>
-        /// divPromo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPromo;
+        protected global::System.Web.UI.WebControls.Button btnRegresar;
     }
 }

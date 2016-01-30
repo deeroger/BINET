@@ -59,6 +59,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActualizarDatos.aspx" />
+    <Content Include="ConfirmarPrestamo.aspx" />
+    <Content Include="ConsultarHistorialPrestamo.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\facebook.png" />
@@ -72,6 +75,8 @@
     <Content Include="Index.aspx" />
     <Content Include="LogOut.aspx" />
     <Content Include="Main.aspx" />
+    <Content Include="MostrarCronograma.aspx" />
+    <Content Include="RegistrarPrestamo.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="MainSite.Master" />
@@ -120,6 +125,27 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarDatos.aspx.cs">
+      <DependentUpon>ActualizarDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarDatos.aspx.designer.cs">
+      <DependentUpon>ActualizarDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmarPrestamo.aspx.cs">
+      <DependentUpon>ConfirmarPrestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmarPrestamo.aspx.designer.cs">
+      <DependentUpon>ConfirmarPrestamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarHistorialPrestamo.aspx.cs">
+      <DependentUpon>ConsultarHistorialPrestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultarHistorialPrestamo.aspx.designer.cs">
+      <DependentUpon>ConsultarHistorialPrestamo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,7 +174,21 @@
     <Compile Include="MainSite.Master.designer.cs">
       <DependentUpon>MainSite.Master</DependentUpon>
     </Compile>
+    <Compile Include="MostrarCronograma.aspx.cs">
+      <DependentUpon>MostrarCronograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarCronograma.aspx.designer.cs">
+      <DependentUpon>MostrarCronograma.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarPrestamo.aspx.cs">
+      <DependentUpon>RegistrarPrestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarPrestamo.aspx.designer.cs">
+      <DependentUpon>RegistrarPrestamo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UsuarioService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

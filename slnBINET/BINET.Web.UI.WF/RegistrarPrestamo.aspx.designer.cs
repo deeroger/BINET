@@ -10,24 +10,33 @@
 namespace BINET.Web.UI.WF {
     
     
-    public partial class Main {
+    public partial class RegistrarPrestamo {
         
         /// <summary>
-        /// mnuUsuario control.
+        /// cboCuenta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu mnuUsuario;
+        protected global::System.Web.UI.WebControls.DropDownList cboCuenta;
         
         /// <summary>
-        /// divPromo control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPromo;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        
+        /// <summary>
+        /// btnAceptar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAceptar;
     }
 }

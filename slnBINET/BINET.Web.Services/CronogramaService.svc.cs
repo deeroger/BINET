@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BINET.Web.Services
 {
-    public class Service1 : ICronograma
+    public class CronogramaService : ICronograma
     {
         public Cronogramas Registrar_Cronograma(int pCodigo, DateTime pFecDesem, double pMontoPrest, int pNroCuotas)
         {

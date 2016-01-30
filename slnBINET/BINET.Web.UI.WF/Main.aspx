@@ -3,6 +3,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCuerpo" runat="server">
         <br />
+        <asp:Menu ID="mnuUsuario" runat="server" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="#7C6F57" Orientation="Horizontal" StaticSubMenuIndent="10px">
+            <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#F7F6F3" />
+            <DynamicSelectedStyle BackColor="#5D7B9D" />
+            <Items>
+                <asp:MenuItem Text="Actualizar Datos" Value="Actualizar Datos" NavigateUrl="~/ActualizarDatos.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Consultar Historial de Prestamo" Value="Consultar Historial de Prestamo" NavigateUrl="~/ConsultarHistorialPrestamo.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Cronograma de Pago" Value="Cronograma de Pago" NavigateUrl="~/MostrarCronograma.aspx"></asp:MenuItem>
+            </Items>
+            <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <StaticSelectedStyle BackColor="#5D7B9D" />
+        </asp:Menu>
+        <br />
         <div style="width:100%">
             <div style="width:600px;margin:0 auto;">
                 <table class="table table-condensed">
@@ -34,7 +49,7 @@
               <div id="divPromo" class="mensaje-success" style="width:400px;margin:0 auto;" runat="server">
                   Tienes un Préstamo Efectivo Aprobado por S/. 15,000.00
                   <br />
-                  <a href="#">Solicítalo aqui</a>
+                  <a href="RegistrarPrestamo.aspx">Solicítalo aqui</a>
               </div>
           </div>  
         </div>

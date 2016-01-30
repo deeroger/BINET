@@ -14,5 +14,6 @@ namespace BINET.Web.Services
     {
         [OperationContract]
         int LogIn(string uid, string pwd);
+
     }
 }

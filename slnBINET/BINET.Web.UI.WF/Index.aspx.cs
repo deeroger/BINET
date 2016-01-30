@@ -28,28 +28,24 @@ namespace BINET.Web.UI
                 var uid = txtUserName.Text;
                 var pwd = txtPassword.Text;
                 int loginCode = servicio.LogIn(uid, pwd);
-                //if (usuario != null)
-                //{
-                //    Response.Redirect("Main.aspx");
-                //}
-                //else 
-                //{
- 
-                //}
-                //if (uid == "usuario" && pwd == "2016")
-                //{
-                    
-                //}
-                //else if (uid == "promero" || uid == "aromero")
-                //{
-                //    FailureText.Text = "El usuario se encuentra desactivado. Comuníquese con el Banco.";
-                //    ErrorMessage.Visible = true;
-                //}
-                //else
-                //{
-                //    FailureText.Text = "El usuario y/o contraseña ingresado son inválidos.";
-                //    ErrorMessage.Visible = true;
-                //}
+                switch (loginCode) 
+                { 
+                    case 0:
+                        Response.Redirect("Main.aspx");
+                        break;
+                    case 1:
+                        FailureText.Text = "Las credenciales ingresadas son incorrectas";
+                        ErrorMessage.Visible = true;
+                        break;
+                    case 2:
+                        FailureText.Text = "El usuario se encuentra desactivado. Comuníquese con el Banco.";
+                        ErrorMessage.Visible = true;
+                        break;
+                    default:
+                        FailureText.Text = "Error en el inicio de sesión. Comuníquese con el Banco.";
+                        ErrorMessage.Visible = true;
+                        break;
+                }
             }
         }
 

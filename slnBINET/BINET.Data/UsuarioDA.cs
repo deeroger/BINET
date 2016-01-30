@@ -12,15 +12,17 @@ namespace BINET.Data.COM
     {
         public int LogIn(string uid, string pwd)
         {
+            int responseCode = -1;
+
             try 
             {
                 Usuario usuarioBE = null;
-                SqlConnection oCnn = new SqlConnection(this.SdgSqlCnn());
+                SqlConnection oCnn = new SqlConnection(this.SqlCnn());
                 SqlCommand comando = new SqlCommand();
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select IdCli, UID, Password From Tb_Usuario Where Usuario=@Usuario And Password=@Password";
+                comando.CommandText = "Select IdCli, UID, Password, FlaAct From Tb_Usuario Where UID=@UID And Password=@Password;";
                 comando.Connection = oCnn;
-                comando.Parameters.AddWithValue("@Usuario", uid);
+                comando.Parameters.AddWithValue("@UID", uid);
                 comando.Parameters.AddWithValue("@Password", pwd);
                 oCnn.Open();
                 SqlDataReader reader = comando.ExecuteReader();
@@ -32,16 +34,29 @@ namespace BINET.Data.COM
                         usuarioBE.IdCli = reader.GetInt32(0);
                         usuarioBE.UID = reader.GetString(1).Trim();
                         usuarioBE.Password = reader.GetString(2).Trim();
+                        usuarioBE.FlaAct = reader.GetBoolean(3);
                     }
+                    //Reglas de Negocio
+                    if (!usuarioBE.FlaAct)
+                    {
+                        responseCode = 2;
+                    }
+                    else {
+                        responseCode = 0;
+                    }
+                }
+                else 
+                {
+                    responseCode = 1;
                 }
                 reader.Close();
                 oCnn.Close();
                 comando.Dispose();
-                return 0;
+                return responseCode;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                return -1;
+                return responseCode;
             }
         }
 
