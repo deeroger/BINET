@@ -8,8 +8,8 @@ namespace BINET.Entities
 {
     public class Usuario
     {
-        public int idCli { get; set; }
-        public string Usuario { get; set; }
+        public int IdCli { get; set; }
+        public string UID { get; set; }
         public string Password { get; set; }
 
         public bool FlaAct { get; set; }
