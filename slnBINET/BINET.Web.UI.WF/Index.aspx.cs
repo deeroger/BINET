@@ -21,6 +21,7 @@ namespace BINET.Web.UI
 
         protected void LogIn(object sender, EventArgs e)
         {
+            //Test Janet
             if (IsValid)
             {
                 // Validate the user password
