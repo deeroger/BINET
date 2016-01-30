@@ -50,6 +50,12 @@
       <Name>BINET.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScriptSQL\0_BD.sql" />
+    <Content Include="ScriptSQL\1_Tb_Cliente.sql" />
+    <Content Include="ScriptSQL\2_Tb_Usuario.sql" />
+    <Content Include="ScriptSQL\Nota.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -77,10 +77,6 @@
     <Content Include="Main.aspx" />
     <Content Include="MostrarCronograma.aspx" />
     <Content Include="RegistrarPrestamo.aspx" />
-    <Content Include="ScriptSQL\0_BD.sql" />
-    <Content Include="ScriptSQL\1_Tb_Cliente.sql" />
-    <Content Include="ScriptSQL\2_Tb_Usuario.sql" />
-    <Content Include="ScriptSQL\Nota.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="MainSite.Master" />
