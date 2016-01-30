@@ -13,10 +13,10 @@ namespace BINET.Web.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select UsuarioService.svc or UsuarioService.svc.cs at the Solution Explorer and start debugging.
     public class UsuarioService : IUsuarioService
     {
-        public Usuario LogIn(string uid, string pwd)
+        public int LogIn(string uid, string pwd)
         {
             UsuarioDA servicio = new UsuarioDA();
-            return null;
+            return servicio.LogIn(uid, pwd);
         }
     }
 }

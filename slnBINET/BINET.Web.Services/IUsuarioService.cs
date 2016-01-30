@@ -13,6 +13,6 @@ namespace BINET.Web.Services
     public interface IUsuarioService
     {
         [OperationContract]
-        Usuario LogIn(string uid, string pwd);
+        int LogIn(string uid, string pwd);
     }
 }

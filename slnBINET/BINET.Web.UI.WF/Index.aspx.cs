@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BINET.Web.UI.WF.UsuarioService;
 
 namespace BINET.Web.UI
 {
@@ -23,22 +24,32 @@ namespace BINET.Web.UI
             if (IsValid)
             {
                 // Validate the user password
+                UsuarioServiceClient servicio = new UsuarioServiceClient();
                 var uid = txtUserName.Text;
                 var pwd = txtPassword.Text;
-                if (uid == "usuario" && pwd == "2016")
-                {
-                    Response.Redirect("Main.aspx");
-                }
-                else if (uid == "promero" || uid == "aromero")
-                {
-                    FailureText.Text = "El usuario se encuentra desactivado. Comuníquese con el Banco.";
-                    ErrorMessage.Visible = true;
-                }
-                else
-                {
-                    FailureText.Text = "El usuario y/o contraseña ingresado son inválidos.";
-                    ErrorMessage.Visible = true;
-                }
+                int loginCode = servicio.LogIn(uid, pwd);
+                //if (usuario != null)
+                //{
+                //    Response.Redirect("Main.aspx");
+                //}
+                //else 
+                //{
+ 
+                //}
+                //if (uid == "usuario" && pwd == "2016")
+                //{
+                    
+                //}
+                //else if (uid == "promero" || uid == "aromero")
+                //{
+                //    FailureText.Text = "El usuario se encuentra desactivado. Comuníquese con el Banco.";
+                //    ErrorMessage.Visible = true;
+                //}
+                //else
+                //{
+                //    FailureText.Text = "El usuario y/o contraseña ingresado son inválidos.";
+                //    ErrorMessage.Visible = true;
+                //}
             }
         }
 
