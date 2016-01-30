@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="BINET.Web.Services.WebForm" CodeBehind="WebForm.svc.cs" %>
