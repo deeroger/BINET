@@ -11,7 +11,8 @@ namespace BINET.Web.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) {
+            if (!IsPostBack)
+            {
                 MainSite master = (MainSite)this.Master;
                 master.HideUserData();
             }
@@ -24,11 +25,11 @@ namespace BINET.Web.UI
                 // Validate the user password
                 var uid = txtUserName.Text;
                 var pwd = txtPassword.Text;
-                if (uid=="usuario" && pwd=="2016")
+                if (uid == "usuario" && pwd == "2016")
                 {
                     Response.Redirect("Main.aspx");
                 }
-                else if (uid == "promero" || uid=="aromero")
+                else if (uid == "promero" || uid == "aromero")
                 {
                     FailureText.Text = "El usuario se encuentra desactivado. Comuníquese con el Banco.";
                     ErrorMessage.Visible = true;

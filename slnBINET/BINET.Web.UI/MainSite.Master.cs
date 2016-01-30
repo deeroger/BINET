@@ -11,13 +11,13 @@ namespace BINET.Web.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        public void HideUserData() 
+        public void HideUserData()
         {
-            userdata_row_right.Visible = false;
-            mnuPrincipal.Visible = false;
+            //userdata_row_right.Visible = false;
+            //mnuPrincipal.Visible = false;
         }
 
     }

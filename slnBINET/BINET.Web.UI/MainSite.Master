@@ -5,18 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>BINET - Sistema de Banca por Internet</title>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <script language="javascript" type="text/javascript">
-        function toggle(div_id) {
-            var el = document.getElementById(div_id);
-            if (el.style.display == 'none' || el.style.display == '') {
-                el.style.display = 'block';
-            }
-            else {
-                el.style.display = 'none';
-            }
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="Content/site.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
