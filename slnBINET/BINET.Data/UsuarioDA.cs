@@ -10,10 +10,7 @@ namespace BINET.Data.COM
 {
     public class UsuarioDA : Conexion
     {
-
-        public string ErrorMessage { get; set; }
-
-        public Usuario LogIn(string uid, string pwd)
+        public int LogIn(string uid, string pwd)
         {
             try 
             {
@@ -40,12 +37,11 @@ namespace BINET.Data.COM
                 reader.Close();
                 oCnn.Close();
                 comando.Dispose();
-                return usuarioBE;
+                return 0;
             }
             catch (Exception ex)
             {
-                ErrorMessage = ex.Message;
-                return null;
+                return -1;
             }
         }
 

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Web.UI.WF", "BINET.Web.UI.WF\BINET.Web.UI.WF.csproj", "{FB392A58-9868-44FB-976F-7D12B4A4159C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55ABA3BD-47C4-48BA-A3ED-B6367AD10756} = {55ABA3BD-47C4-48BA-A3ED-B6367AD10756}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Entities", "BINET.Entities\BINET.Entities.csproj", "{8660E0B4-8BF9-4CE7-A309-E2D4D0EBD17D}"
 EndProject
