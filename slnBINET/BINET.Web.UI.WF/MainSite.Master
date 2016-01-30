@@ -7,6 +7,17 @@
     <title>BINET - Sistema de Banca por Internet</title>
     <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="Content/site.css" />
+    <script language="javascript" type="text/javascript">
+        function toggle(div_id) {
+            var el = document.getElementById(div_id);
+            if (el.style.display == 'none' || el.style.display == '') {
+                el.style.display = 'block';
+            }
+            else {
+                el.style.display = 'none';
+            }
+        }
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

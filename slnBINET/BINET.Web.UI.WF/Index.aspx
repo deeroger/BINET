@@ -32,12 +32,24 @@
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPassword" CssClass="text-danger" ErrorMessage="El campo Contraseña es requerido" />
                             </div>
                         </div>
+                        <%--<div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    <asp:CheckBox runat="server" ID="RememberMe" />
+                                    <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
+                                </div>
+                            </div>
+                        </div>--%>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <asp:Button runat="server" OnClick="LogIn" Text="Iniciar Sesión" CssClass="btn btn-default" />
                             </div>
                         </div>
                     </div>
+                    <%--<p>
+                        <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
+                        if you don't have a local account.
+                    </p>--%>
                 </section>
             </div>
                 </td>
@@ -66,4 +78,3 @@
         </table>
     </div>
 </asp:Content>
-

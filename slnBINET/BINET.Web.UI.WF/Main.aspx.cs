@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace BINET.Web.UI
+namespace BINET.Web.UI.WF
 {
     public partial class Main : System.Web.UI.Page
     {

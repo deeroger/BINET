@@ -16,8 +16,8 @@ namespace BINET.Web.UI
 
         public void HideUserData()
         {
-            //userdata_row_right.Visible = false;
-            //mnuPrincipal.Visible = false;
+            userdata_row_right.Visible = false;
+            mnuPrincipal.Visible = false;
         }
 
     }

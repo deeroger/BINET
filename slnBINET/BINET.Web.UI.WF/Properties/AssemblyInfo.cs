@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BINET.Web.UI")]
+[assembly: AssemblyTitle("BINET.Web.UI.WF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("BINET.Web.UI")]
+[assembly: AssemblyProduct("BINET.Web.UI.WF")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("26a492be-d266-41b7-9b63-1d33c949a33f")]
+[assembly: Guid("c31d4e81-f581-4feb-9917-92be493b47ec")]
 
 // Version information for an assembly consists of the following four values:
 //
