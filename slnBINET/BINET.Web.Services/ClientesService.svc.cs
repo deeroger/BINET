@@ -21,7 +21,7 @@ namespace BINET.Web.Services
 
         public Cliente ObtenerCliente(int id)
         {
-            return null;
+            return new Cliente();
         } 
 
 
