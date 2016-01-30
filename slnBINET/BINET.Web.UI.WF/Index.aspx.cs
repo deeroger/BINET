@@ -34,7 +34,7 @@ namespace BINET.Web.UI
                         Response.Redirect("Main.aspx");
                         break;
                     case 1:
-                        FailureText.Text = "Las credenciales ingresadas son incorrectas";
+                        FailureText.Text = "Las credenciales ingresadas son incorrectas!!!!";
                         ErrorMessage.Visible = true;
                         break;
                     case 2:
