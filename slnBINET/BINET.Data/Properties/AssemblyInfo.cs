@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BINET.Data.COM")]
+[assembly: AssemblyTitle("BINET.Data")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("BINET.Data.COM")]
+[assembly: AssemblyProduct("BINET.Data")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fbeeebc8-72a3-4a63-add3-94f559c94401")]
+[assembly: Guid("644a1b95-ec67-46ef-852a-81bc17525d5f")]
 
 // Version information for an assembly consists of the following four values:
 //

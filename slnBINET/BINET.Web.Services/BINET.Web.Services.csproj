@@ -82,9 +82,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BINET.Data.COM\BINET.Data.COM.csproj">
-      <Project>{5fe48185-3ab5-44af-ae84-57fbdfbcf21f}</Project>
-      <Name>BINET.Data.COM</Name>
+    <ProjectReference Include="..\BINET.Data\BINET.Data.csproj">
+      <Project>{408f4aa3-3ef9-4b3e-baee-b1831547b7cd}</Project>
+      <Name>BINET.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\BINET.Entities\BINET.Entities.csproj">
       <Project>{8660e0b4-8bf9-4ce7-a309-e2d4d0ebd17d}</Project>
