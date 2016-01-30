@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Web.UI.WF", "BINET.Web.UI.WF\BINET.Web.UI.WF.csproj", "{FB392A58-9868-44FB-976F-7D12B4A4159C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Entities", "BINET.Entities\BINET.Entities.csproj", "{8660E0B4-8BF9-4CE7-A309-E2D4D0EBD17D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Data.COM", "BINET.Data.COM\BINET.Data.COM.csproj", "{5FE48185-3AB5-44AF-AE84-57FBDFBCF21F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{FB392A58-9868-44FB-976F-7D12B4A4159C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB392A58-9868-44FB-976F-7D12B4A4159C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB392A58-9868-44FB-976F-7D12B4A4159C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8660E0B4-8BF9-4CE7-A309-E2D4D0EBD17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8660E0B4-8BF9-4CE7-A309-E2D4D0EBD17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8660E0B4-8BF9-4CE7-A309-E2D4D0EBD17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8660E0B4-8BF9-4CE7-A309-E2D4D0EBD17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE48185-3AB5-44AF-AE84-57FBDFBCF21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE48185-3AB5-44AF-AE84-57FBDFBCF21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE48185-3AB5-44AF-AE84-57FBDFBCF21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE48185-3AB5-44AF-AE84-57FBDFBCF21F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
