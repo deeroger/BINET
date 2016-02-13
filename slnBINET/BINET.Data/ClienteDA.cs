@@ -78,5 +78,33 @@ namespace BINET.Data
             }
             return obtenerCliente(cliente.IdCli);
         }
-    }
+
+        public bool verificarCorreo(String mailCli01)
+        {
+            
+
+            Cliente clienteCorreo = null;
+            SqlConnection oCnn = new SqlConnection(this.SqlCnn());
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "Select IdCli From Cliente Where MailCli01=@MailCli01;";
+            comando.Connection = oCnn;
+            comando.Parameters.AddWithValue("@MailCli01", mailCli01);
+            oCnn.Open();
+          
+            SqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+       
+
+}
+
+        }
 }
