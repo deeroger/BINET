@@ -1,1 +1,7 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="BINET.Web.Services.ClientesService" CodeBehind="ClientesService.svc.cs" %>
+﻿<%@ ServiceHost 
+    Language="C#" 
+    Debug="true" 
+    Service="BINET.Web.Services.ClientesService" 
+    CodeBehind="ClientesService.svc.cs" 
+    Factory="System.ServiceModel.Activation.WebServiceHostFactory"
+%>

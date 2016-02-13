@@ -19,6 +19,6 @@ namespace BINET.Web.Services
 
         [WebInvoke(Method = "GET", UriTemplate = "Clientes/{codigo}", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
-        Cliente ObtenerCliente(int codigo);
+        Cliente ObtenerCliente(string codigo);
     }
 }

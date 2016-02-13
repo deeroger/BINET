@@ -7,15 +7,15 @@
         <h4>Actualizar Datos</h4>
         <hr />
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="txtApellidos" CssClass="col-md-2 control-label" Enabled="false">Apellidos</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="txtApellidos" CssClass="col-md-2 control-label">Apellidos</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
+                <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" Width="200px" ReadOnly="true"></asp:TextBox>
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="txtNombres" CssClass="col-md-2 control-label" Enabled="false">Nombres</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="txtNombres" CssClass="col-md-2 control-label">Nombres</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox ID="txtNombres" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
+                <asp:TextBox ID="txtNombres" runat="server" CssClass="form-control" Width="200px" ReadOnly="true"></asp:TextBox>
             </div>
         </div>
         <div class="form-group">
@@ -36,5 +36,6 @@
                 <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="btn btn-default" OnClick="btnAceptar_Click" />
             </div>
         </div>
+        <div id="divPromo" class="mensaje-success" style="width:80%;margin:0 auto;" runat="server"></div>
     </div>
 </asp:Content>

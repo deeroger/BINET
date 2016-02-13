@@ -79,32 +79,34 @@ namespace BINET.Data
             return obtenerCliente(cliente.IdCli);
         }
 
-        public bool verificarCorreo(String mailCli01)
+        public bool verificarCorreo(string mailCli01, int idCliente)
         {
-            
-
-            Cliente clienteCorreo = null;
-            SqlConnection oCnn = new SqlConnection(this.SqlCnn());
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select IdCli From Cliente Where MailCli01=@MailCli01;";
-            comando.Connection = oCnn;
-            comando.Parameters.AddWithValue("@MailCli01", mailCli01);
-            oCnn.Open();
-          
-            SqlDataReader reader = comando.ExecuteReader();
-
-            if (reader.HasRows)
+            bool result=false;
+            using(SqlConnection oCnn = new SqlConnection(this.SqlCnn()))
             {
-                return false;
+                using (SqlCommand comando = new SqlCommand()) 
+                {
+                    oCnn.Open();
+                    comando.CommandType = System.Data.CommandType.Text;
+                    comando.CommandText = "Select IdCliente From Cliente Where EMail=@MailCli01 And IdCliente<>@IdCliente;";
+                    comando.Connection = oCnn;
+                    comando.Parameters.AddWithValue("@MailCli01", mailCli01);
+                    comando.Parameters.AddWithValue("@IdCliente", idCliente);
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            result = false;
+                        }
+                        else
+                        {
+                            result = true;
+                        }
+                    }
+                    oCnn.Close();
+                }
             }
-            else
-            {
-                return true;
-            }
-       
-
-}
-
+            return result;
         }
+    }
 }

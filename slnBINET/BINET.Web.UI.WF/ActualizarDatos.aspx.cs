@@ -18,14 +18,20 @@ namespace BINET.Web.UI.WF
         {
             if (!IsPostBack)
             {
+                Usuario usuario = (Usuario)Session["Usuario"];
                 Cliente clienteObtenido = null;
-                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:17982/ClientesService.svc/Clientes/1");
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:17982/ClientesService.svc/Clientes/" + usuario.IdCli);
                 req.Method = "GET";
                 HttpWebResponse res = (HttpWebResponse)req.GetResponse();
                 StreamReader reader = new StreamReader(res.GetResponseStream());
                 string clienteJSON = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 clienteObtenido = js.Deserialize<Cliente>(clienteJSON);
+                txtApellidos.Text = clienteObtenido.ApePat + " " + clienteObtenido.ApeMat;
+                txtNombres.Text = clienteObtenido.NomCli01;
+                txtTelefono.Text = clienteObtenido.TelCli01;
+                txtEmail.Text = clienteObtenido.MailCli01;
+                divPromo.Visible = false;
             }
         }
 
@@ -36,22 +42,39 @@ namespace BINET.Web.UI.WF
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            string postdata = "{\"IdCli\":\"1\",\"MailCli01\":\"alexander@hotmail.com\",\"TelCli01\":\"999999999\"}";
-            byte[] data = Encoding.UTF8.GetBytes(postdata);
-            HttpWebRequest req = (HttpWebRequest)WebRequest
-                .Create("http://localhost:17982/ClientesService.svc/Clientes");
-            req.Method = "PUT";
-            req.ContentLength = data.Length;
-            req.ContentType = "application/json";
-            var reqStream = req.GetRequestStream();
-            reqStream.Write(data, 0, data.Length);
-            HttpWebResponse res = (HttpWebResponse)req.GetResponse();
-            StreamReader reader = new StreamReader(res.GetResponseStream());
-            string clienteJson = reader.ReadToEnd();
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            Cliente clienteActualizado = js.Deserialize<Cliente>(clienteJson);
-
-            Response.Redirect("Main.aspx");
+            divPromo.Visible = false;
+            Usuario usuario = (Usuario)Session["Usuario"];
+            try 
+            {
+                string postdata = "{\"IdCli\":\"" + usuario.IdCli + "\",\"MailCli01\":\"" + txtEmail.Text + "\",\"TelCli01\":\"" + txtTelefono.Text + "\"}";
+                byte[] data = Encoding.UTF8.GetBytes(postdata);
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:17982/ClientesService.svc/Clientes");
+                req.Method = "PUT";
+                req.ContentLength = data.Length;
+                req.ContentType = "application/json";
+                var reqStream = req.GetRequestStream();
+                reqStream.Write(data, 0, data.Length);
+                HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+                StreamReader reader = new StreamReader(res.GetResponseStream());
+                string clienteJson = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                Cliente clienteActualizado = js.Deserialize<Cliente>(clienteJson);
+                divPromo.InnerText = "Datos actualizados";
+                divPromo.Attributes["class"] = "mensaje-success";
+                divPromo.Visible = true;
+            }
+            catch (WebException ex)
+            {
+                HttpStatusCode code = ((HttpWebResponse)ex.Response).StatusCode;
+                string message = ((HttpWebResponse)ex.Response).StatusDescription;
+                StreamReader reader = new StreamReader(ex.Response.GetResponseStream());
+                string error = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                string mensage = js.Deserialize<string>(error);
+                divPromo.Attributes["class"] = "mensaje-error";
+                divPromo.InnerText = mensage;
+                divPromo.Visible = true;
+            }
         }
 
         
