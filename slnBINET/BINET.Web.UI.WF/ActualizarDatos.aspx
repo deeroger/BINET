@@ -7,13 +7,13 @@
         <h4>Actualizar Datos</h4>
         <hr />
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="txtApellidos" CssClass="col-md-2 control-label">Apellidos</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="txtApellidos" CssClass="col-md-2 control-label" Enabled="false">Apellidos</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="txtNombres" CssClass="col-md-2 control-label">Nombres</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="txtNombres" CssClass="col-md-2 control-label" Enabled="false">Nombres</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox ID="txtNombres" runat="server" CssClass="form-control" Width="200px"></asp:TextBox>
             </div>

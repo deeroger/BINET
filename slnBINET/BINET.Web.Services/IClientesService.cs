@@ -15,7 +15,7 @@ namespace BINET.Web.Services
     {
         [WebInvoke(Method = "PUT", UriTemplate = "Clientes", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
-        Cliente actualizarCliente(Cliente cliente);
+        Cliente ActualizarCliente(Cliente cliente);
 
         [WebInvoke(Method = "GET", UriTemplate = "Clientes/{codigo}", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]

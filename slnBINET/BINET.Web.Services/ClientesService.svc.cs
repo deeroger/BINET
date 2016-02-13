@@ -13,7 +13,7 @@ namespace BINET.Web.Services
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ClientesService.svc o ClientesService.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ClientesService : IClientesService
     {
-        public Cliente actualizarCliente(Cliente cliente)
+        public Cliente ActualizarCliente(Cliente cliente)
         {
             ClienteDA servicio = new ClienteDA();
             return servicio.actualizarCliente(cliente);
