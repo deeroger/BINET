@@ -70,9 +70,9 @@ namespace BINET.Web.UI.WF
                 StreamReader reader = new StreamReader(ex.Response.GetResponseStream());
                 string error = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
-                string mensage = js.Deserialize<string>(error);
+                string mensaje = js.Deserialize<string>(error);
                 divPromo.Attributes["class"] = "mensaje-error";
-                divPromo.InnerText = mensage;
+                divPromo.InnerText = mensaje;
                 divPromo.Visible = true;
             }
         }
