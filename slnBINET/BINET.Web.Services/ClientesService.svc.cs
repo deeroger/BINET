@@ -1,4 +1,5 @@
-﻿using BINET.Entities;
+﻿using BINET.Data;
+using BINET.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,16 @@ namespace BINET.Web.Services
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ClientesService.svc o ClientesService.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ClientesService : IClientesService
     {
-
-        public Cliente CrearCliente(string nombre, string apellidoPaterno, string apellidoMaterno, string email, int telefono)
-    {
-    return null;
-    }
-
-
-        public Cliente ObtenerCliente(int id)
+        public Cliente actualizarCliente(Cliente cliente)
         {
-            return new Cliente();
+            ClienteDA servicio = new ClienteDA();
+            return servicio.actualizarCliente(cliente);
+        }
+
+        public Cliente ObtenerCliente(int codigo)
+        {
+            ClienteDA servicio = new ClienteDA();
+            return servicio.obtenerCliente(codigo);
         } 
-
-
     }
 }

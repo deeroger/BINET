@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace BINET.Web.Services
@@ -12,10 +13,12 @@ namespace BINET.Web.Services
     [ServiceContract]
     public interface IClientesService
     {
+        [WebInvoke(Method = "PUT", UriTemplate = "Clientes", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
-        Cliente CrearCliente(string nombre, string apellidoPaterno, string apellidoMaterno, string email, int telefono);
-        [OperationContract]
+        Cliente actualizarCliente(Cliente cliente);
 
-        Cliente ObtenerCliente(int id);
+        [WebInvoke(Method = "GET", UriTemplate = "Clientes/{codigo}", ResponseFormat = WebMessageFormat.Json)]
+        [OperationContract]
+        Cliente ObtenerCliente(int codigo);
     }
 }

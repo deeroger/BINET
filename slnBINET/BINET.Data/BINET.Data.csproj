@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteDA.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDA.cs" />
@@ -52,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ScriptSQL\0_BD.sql" />
-    <Content Include="ScriptSQL\1_Tb_Cliente.sql" />
+    <Content Include="ScriptSQL\1_Cliente.sql" />
     <Content Include="ScriptSQL\2_Tb_Usuario.sql" />
     <Content Include="ScriptSQL\Nota.txt" />
   </ItemGroup>
