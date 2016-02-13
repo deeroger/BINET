@@ -16,10 +16,11 @@ namespace BINET.Web.UI.WF.UsuarioService {
     public interface IUsuarioService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioService/LogIn", ReplyAction="http://tempuri.org/IUsuarioService/LogInResponse")]
-        int LogIn(string uid, string pwd);
+        [System.ServiceModel.FaultContractAttribute(typeof(BINET.Entities.ServiceException), Action="http://tempuri.org/IUsuarioService/LogInServiceExceptionFault", Name="ServiceException", Namespace="http://schemas.datacontract.org/2004/07/BINET.Entities")]
+        BINET.Entities.Usuario LogIn(string uid, string pwd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioService/LogIn", ReplyAction="http://tempuri.org/IUsuarioService/LogInResponse")]
-        System.Threading.Tasks.Task<int> LogInAsync(string uid, string pwd);
+        System.Threading.Tasks.Task<BINET.Entities.Usuario> LogInAsync(string uid, string pwd);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,11 +50,11 @@ namespace BINET.Web.UI.WF.UsuarioService {
                 base(binding, remoteAddress) {
         }
         
-        public int LogIn(string uid, string pwd) {
+        public BINET.Entities.Usuario LogIn(string uid, string pwd) {
             return base.Channel.LogIn(uid, pwd);
         }
         
-        public System.Threading.Tasks.Task<int> LogInAsync(string uid, string pwd) {
+        public System.Threading.Tasks.Task<BINET.Entities.Usuario> LogInAsync(string uid, string pwd) {
             return base.Channel.LogInAsync(uid, pwd);
         }
     }

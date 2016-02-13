@@ -12,8 +12,9 @@ namespace BINET.Web.Services
     [ServiceContract]
     public interface IUsuarioService
     {
+        [FaultContract(typeof(ServiceException))]
         [OperationContract]
-        int LogIn(string uid, string pwd);
+        Usuario LogIn(string uid, string pwd);
 
     }
 }

@@ -3,6 +3,7 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:17982/UsuarioService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:17982/UsuarioService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BINET.Entities" />
       <xsd:import schemaLocation="http://localhost:17982/UsuarioService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
@@ -12,10 +13,14 @@
   <wsdl:message name="IUsuarioService_LogIn_OutputMessage">
     <wsdl:part name="parameters" element="tns:LogInResponse" />
   </wsdl:message>
+  <wsdl:message name="IUsuarioService_LogIn_ServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/BINET.Entities" name="detail" element="q1:ServiceException" />
+  </wsdl:message>
   <wsdl:portType name="IUsuarioService">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/LogIn" message="tns:IUsuarioService_LogIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/LogInResponse" message="tns:IUsuarioService_LogIn_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsuarioService/LogInServiceExceptionFault" name="ServiceExceptionFault" message="tns:IUsuarioService_LogIn_ServiceExceptionFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUsuarioService" type="tns:IUsuarioService">
@@ -28,6 +33,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ServiceExceptionFault">
+        <soap:fault use="literal" name="ServiceExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="UsuarioService">

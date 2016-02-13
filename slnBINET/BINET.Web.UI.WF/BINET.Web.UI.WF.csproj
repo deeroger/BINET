@@ -81,6 +81,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="MainSite.Master" />
+    <Content Include="Properties\DataSources\BINET.Entities.Usuario.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -119,6 +120,9 @@
     <Content Include="Web.config" />
     <None Include="Service References\UsuarioService\UsuarioService.wsdl" />
     <None Include="Service References\UsuarioService\UsuarioService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UsuarioService\UsuarioService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UsuarioService\UsuarioService2.xsd">

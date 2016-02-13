@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BINET.Web.UI.WF.UsuarioService;
+using BINET.Entities;
+using System.ServiceModel;
 
 namespace BINET.Web.UI
 {
@@ -21,33 +23,24 @@ namespace BINET.Web.UI
 
         protected void LogIn(object sender, EventArgs e)
         {
-            //Test Janet
-            //Test
             if (IsValid)
             {
                 // Validate the user password
                 UsuarioServiceClient servicio = new UsuarioServiceClient();
                 var uid = txtUserName.Text;
                 var pwd = txtPassword.Text;
-                int loginCode = servicio.LogIn(uid, pwd);
-                switch (loginCode) 
-                { 
-                    case 0:
-                        Response.Redirect("Main.aspx");
-                        break;
-                    case 1:
-                        FailureText.Text = "Las credenciales ingresadas son incorrectas!!!!";
-                        ErrorMessage.Visible = true;
-                        break;
-                    case 2:
-                        FailureText.Text = "El usuario se encuentra desactivado. Comuníquese con el Banco.";
-                        ErrorMessage.Visible = true;
-                        break;
-                    default:
-                        FailureText.Text = "Error en el inicio de sesión. Comuníquese con el Banco.";
-                        ErrorMessage.Visible = true;
-                        break;
+                try
+                {
+                    Usuario usuario = servicio.LogIn(uid, pwd);
+                    Session.Add("Usuario", usuario);
+                    Response.Redirect("Main.aspx");
                 }
+                catch (FaultException<ServiceException> ex)
+                {
+                    FailureText.Text = ex.Detail.mensaje;
+                    ErrorMessage.Visible = true;
+                }
+
             }
         }
 

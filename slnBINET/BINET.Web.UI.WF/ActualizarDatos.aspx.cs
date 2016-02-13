@@ -26,8 +26,6 @@ namespace BINET.Web.UI.WF
                 string clienteJSON = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 clienteObtenido = js.Deserialize<Cliente>(clienteJSON);
-
-
             }
         }
 
