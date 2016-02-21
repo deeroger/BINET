@@ -138,7 +138,7 @@ namespace BINET.Web.Services
         public List<Prestamo> ListarHistorial(string codigo)
         {
             HistorialPrestamoDA servicio = new HistorialPrestamoDA();
-            return servicio.listaPrestamo(codigo);
+            return servicio.listaPrestamo(codigo); 
         }
     }
     
