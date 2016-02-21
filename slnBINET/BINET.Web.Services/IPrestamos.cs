@@ -21,6 +21,8 @@ namespace BINET.Web.Services
         void EliminarPrestamo(int codigo);
         [OperationContract]
         List<Prestamo> ListarPrestamos();
+        [OperationContract]
+        List<Prestamo> ListarHistorial(string codigo);
     }
 }
 

@@ -51,6 +51,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="CronogramaDAO.cs" />
     <Compile Include="CuentaDAO.cs" />
+    <Compile Include="HistorialPrestamoDA.cs" />
     <Compile Include="MonedaDAO.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="PrestamoDAO.cs" />

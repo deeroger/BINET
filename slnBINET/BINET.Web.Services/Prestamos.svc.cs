@@ -134,7 +134,17 @@ namespace BINET.Web.Services
         {
             return PrestamoDAO.ListarTodos().ToList(); 
          }
+
+        public List<Prestamo> ListarHistorial(string codigo)
+        {
+            HistorialPrestamoDA servicio = new HistorialPrestamoDA();
+            return servicio.listaPrestamo(codigo);
+        }
     }
+    
+   
+
+
 }
 
 
