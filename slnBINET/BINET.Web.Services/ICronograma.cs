@@ -11,12 +11,9 @@ namespace BINET.Web.Services
    [ServiceContract]
     public interface ICronograma
     {
-
         [OperationContract]
-        Cronogramas Consulta_cronogrma(int pCodigo);
+        List<Cronogramas> Consulta_cronogrma(int pCodigo);
 
-        [OperationContract]
-        Cronogramas Registrar_Cronograma(int pCodigo, DateTime pFecDesem, double pMontoPrest, int pNroCuotas);
 
     }
 }

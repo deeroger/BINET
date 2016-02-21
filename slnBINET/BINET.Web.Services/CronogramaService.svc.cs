@@ -1,4 +1,5 @@
 ﻿using BINET.Entities;
+using BINET.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +11,14 @@ namespace BINET.Web.Services
 {
     public class CronogramaService : ICronograma
     {
-        public Cronogramas Registrar_Cronograma(int pCodigo, DateTime pFecDesem, double pMontoPrest, int pNroCuotas)
+        public List<Cronogramas> Consulta_cronogrma(int pCodigo)
         {
-            Cronogramas NuevoCro = new Cronogramas()
-            {
-                NroCuenta = pCodigo,
-                FecDesem = pFecDesem,
-                MontoPrest = pMontoPrest,
-                NroCuotas = pNroCuotas,
-            };
-
-            return Reporte.Agregar(NuevoCro);
+            CronogramaDAO listcro = new CronogramaDAO();
+            return listcro.obtenerListCronograma(pCodigo);
         }
 
+      
 
-        CronogramaDAO Reporte = new CronogramaDAO();
-        public Cronogramas Consulta_cronogrma(int pCodigo)
-        {
-            return Reporte.buscarCronograma(pCodigo);
-        }
+
     }
 }

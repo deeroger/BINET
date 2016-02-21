@@ -71,7 +71,6 @@
     <Compile Include="ClientesService.svc.cs">
       <DependentUpon>ClientesService.svc</DependentUpon>
     </Compile>
-    <Compile Include="CronogramaDAO.cs" />
     <Compile Include="IClientesService.cs" />
     <Compile Include="IPrestamos.cs" />
     <Compile Include="ICronograma.cs" />
