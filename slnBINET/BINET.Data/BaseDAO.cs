@@ -47,6 +47,7 @@ namespace BINET.Data
             {
                 ICriteria busqueda = sesion.CreateCriteria(typeof(Entidad));
                 return busqueda.List<Entidad>();
+
             }
         }
     }
