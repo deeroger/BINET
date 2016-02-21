@@ -56,12 +56,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Service References\MensajesWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UsuarioService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ClienteTest.cs" />
+    <Compile Include="PrestamoTest.cs" />
     <Compile Include="UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +76,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\BINET.Entities.Prestamo.datasource" />
+    <None Include="Service References\MensajesWS\Prestamos.wsdl" />
+    <None Include="Service References\MensajesWS\Prestamos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MensajesWS\Prestamos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MensajesWS\Prestamos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UsuarioService\UsuarioService.wsdl" />
     <None Include="Service References\UsuarioService\UsuarioService.xsd">
       <SubType>Designer</SubType>
@@ -79,6 +96,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MensajesWS\" />
     <WCFMetadataStorage Include="Service References\UsuarioService\" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +119,21 @@
       <Project>{8660e0b4-8bf9-4ce7-a309-e2d4d0ebd17d}</Project>
       <Name>BINET.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MensajesWS\Prestamos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MensajesWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MensajesWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MensajesWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="BINET.Entities"
+                   namespace="BINET.Entities"
+                   default-lazy="false">
+  <class name="Cliente" table="cliente">
+    <id name="IdCli" column="IdCliente">
+      <generator class="increment" />
+    </id>
+    <property name="NomCli01" column="Nombre" />
+    <property name="ApePat" column="ApellidoPaterno" />
+    <property name="ApeMat" column="ApellidoMaterno" />
+    <property name="NumIde" column="NumIdent" />
+    <property name="MailCli01" column="Email" />
+    <property name="TelCli01" column="Telefono" />
+  </class>
+</hibernate-mapping>

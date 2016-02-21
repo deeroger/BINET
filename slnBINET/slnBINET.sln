@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Web.UI.WF", "BINET.Web.UI.WF\BINET.Web.UI.WF.csproj", "{FB392A58-9868-44FB-976F-7D12B4A4159C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{55ABA3BD-47C4-48BA-A3ED-B6367AD10756} = {55ABA3BD-47C4-48BA-A3ED-B6367AD10756}
@@ -17,6 +15,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Test", "BINET.Test\BINET.Test.csproj", "{5723A667-E641-475C-AF00-C885797D154D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{55ABA3BD-47C4-48BA-A3ED-B6367AD10756} = {55ABA3BD-47C4-48BA-A3ED-B6367AD10756}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{1D8D2BE6-9975-4238-82A4-62EBBC3F74C1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Librerias\Iesi.Collections.dll = ..\Librerias\Iesi.Collections.dll
+		..\Librerias\NHibernate.dll = ..\Librerias\NHibernate.dll
 	EndProjectSection
 EndProject
 Global

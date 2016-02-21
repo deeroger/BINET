@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="14e3cc54-c17d-423a-916c-c8f538259184" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:17982/Prestamos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Prestamos.xsd" MetadataType="Schema" ID="324f3d67-6ae1-495f-b101-d24e74567430" SourceId="1" SourceUrl="http://localhost:17982/Prestamos.svc?xsd=xsd0" />
+    <MetadataFile FileName="Prestamos.wsdl" MetadataType="Wsdl" ID="643152f5-1b69-44f5-ac23-a1a55ac2d461" SourceId="1" SourceUrl="http://localhost:17982/Prestamos.svc?wsdl" />
+    <MetadataFile FileName="Prestamos1.xsd" MetadataType="Schema" ID="7176f5ec-ac7a-41cd-94dd-7fba0a8f7a49" SourceId="1" SourceUrl="http://localhost:17982/Prestamos.svc?xsd=xsd1" />
+    <MetadataFile FileName="Prestamos.disco" MetadataType="Disco" ID="8aebd2e4-47fc-4bd0-b18f-4601892045f9" SourceId="1" SourceUrl="http://localhost:17982/Prestamos.svc?disco" />
+    <MetadataFile FileName="Prestamos2.xsd" MetadataType="Schema" ID="e06477fe-bcac-403f-8e29-c6f928b19ea1" SourceId="1" SourceUrl="http://localhost:17982/Prestamos.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

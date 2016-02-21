@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="BINET.Entities"
+                   namespace="BINET.Entities"
+                   default-lazy="false">
+  <class name="Prestamo" table="prestamo">
+    <id name="Codigo" column="codigo">
+      <generator class="increment" />
+    </id>
+    <property name="Monto" column="monto" />
+    <property name="Cuotas" column="cuotas" />
+    <property name="Tea" column="tea" />
+    <property name="Tcea" column="tcea" />
+    <property name="Montoc" column="montoc" />
+    <property name="Fechor" column="fechor" />    
+    <many-to-one name="Tarjeta" column="tarjeta" />
+    <many-to-one name="Moneda" column="moneda" />
+    <many-to-one name="Cuentaorigen" column="cuentaorigen" />
+    <many-to-one name="Cuentadestino" column="cuentadestino" />
+    <many-to-one name="Cliente" column="cliente" />
+  </class>
+</hibernate-mapping>
+

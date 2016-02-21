@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="BINET.Entities"
+                   namespace="BINET.Entities"
+                   default-lazy="false">
+  <class name="Tarjeta" table="tarjeta">
+    <id name="Codigo" column="codigo">
+      <generator class="increment" />
+    </id>
+    <property name="Cuenta" column="cuenta" />
+    <property name="Tipo" column="tipo" />
+    <property name="Estado" column="estado" />
+  </class>
+
+</hibernate-mapping>
