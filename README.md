@@ -4,5 +4,6 @@ Disposición Efectivo Por Campaña En Banca Por Internet
 Blogs
 *****
 
-Roger Garay   :   http://rgcupc.blogspot.pe/
+Garay Casimiro Roger   :   http://rgcupc.blogspot.pe/
+Romero Salazar Pedro   :   http://pedroromeroupc.blogspot.pe/
 
