@@ -63,7 +63,6 @@
   <ItemGroup>
     <Content Include="ClientesService.svc" />
     <Content Include="Prestamos.svc" />
-    <Content Include="CronogramaService.svc" />
     <Content Include="UsuarioService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -73,15 +72,11 @@
     </Compile>
     <Compile Include="IClientesService.cs" />
     <Compile Include="IPrestamos.cs" />
-    <Compile Include="ICronograma.cs" />
     <Compile Include="IUsuarioService.cs" />
     <Compile Include="Prestamos.svc.cs">
       <DependentUpon>Prestamos.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CronogramaService.svc.cs">
-      <DependentUpon>CronogramaService.svc</DependentUpon>
-    </Compile>
     <Compile Include="UsuarioService.svc.cs">
       <DependentUpon>UsuarioService.svc</DependentUpon>
     </Compile>

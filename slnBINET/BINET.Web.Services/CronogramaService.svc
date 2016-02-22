@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="BINET.Web.Services.Service1" CodeBehind="CronogramaService.svc.cs" %>

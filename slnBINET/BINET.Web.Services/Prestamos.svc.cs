@@ -140,6 +140,13 @@ namespace BINET.Web.Services
             HistorialPrestamoDA servicio = new HistorialPrestamoDA();
             return servicio.listaPrestamo(codigo); 
         }
+
+        public List<Cronogramas> Consulta_cronogrma(int pCodigo)
+        {         
+            CronogramaDAO listcro = new CronogramaDAO();
+            return listcro.obtenerListCronograma(pCodigo);
+        
+        }
     }
     
    

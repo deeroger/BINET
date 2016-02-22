@@ -15,7 +15,8 @@ namespace BINET.Data
         {
 
             Cronogramas crono = new Cronogramas();
-            List<Cronogramas> liscro = new List<Cronogramas>();
+            Cronogramas pago = null;
+            List<Cronogramas> liscro = null;
             try
             {
                 SqlConnection oCnn = new SqlConnection(this.SqlCnn());
@@ -33,7 +34,7 @@ namespace BINET.Data
                         crono.NroCuenta = codigo;
                         crono.NroCuotas = reader.GetInt32(0);
                         crono.FecDesem = reader.GetDateTime(1);
-                        crono.MontoPrest = reader.GetDouble(2);
+                        crono.MontoPrest = (Double)reader.GetDecimal(2);
 
                     }
 
@@ -42,23 +43,28 @@ namespace BINET.Data
                 oCnn.Close();
                 comando.Dispose();
 
-            }
+                double mensualidad = crono.MontoPrest / crono.NroCuotas;
+                int indice = crono.NroCuotas;
+                pago = new Cronogramas();
+                liscro = new List<Cronogramas>();
+                for (int i = 0; i < 2; i++)
+                {
+                    pago.NroCuotas = i + 1;
+                    pago.FecDesem = crono.FecDesem.AddMonths(i+1);
+                    pago.MontoPrest = mensualidad;
+                    liscro.Add(pago);
+                }
+
+                return liscro;
+
+            }           
+
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex);
+                return null;
             }
 
-            double mensualidad = crono.MontoPrest / crono.NroCuotas;
-            int indice = crono.NroCuotas;
-            for (int i = 0; indice > i; i++)
-            {
-                crono.NroCuotas = i + 1;
-                crono.FecDesem = crono.FecDesem.AddMonths(1);
-                crono.MontoPrest = mensualidad;
-                liscro.Add(crono);
-            }
-
-            return liscro;
 
         }
 

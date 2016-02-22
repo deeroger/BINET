@@ -23,6 +23,8 @@ namespace BINET.Web.Services
         List<Prestamo> ListarPrestamos();
         [OperationContract]
         List<Prestamo> ListarHistorial(string codigo);
+        [OperationContract]
+        List<Cronogramas> Consulta_cronogrma(int pCodigo);
     }
 }
 
