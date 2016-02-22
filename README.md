@@ -10,4 +10,5 @@ Romero Salazar Pedro   :   http://pedroromeroupc.blogspot.pe/
 
 Hugo Teccsi Veredas    :  http://hugoteccsi.blogspot.pe/
 
-Yeltsin Moreno Padilla :  http://simplificarconexionbd.blogspot.pe/2016/02/bienvenidos-al-blog.html
+Yeltsin Moreno Padilla :  http://simplificarconexionbd.blogspot.pe/
+                          http://instalarmsmq.blogspot.pe/
