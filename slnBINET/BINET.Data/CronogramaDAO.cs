@@ -68,7 +68,7 @@ namespace BINET.Data
                 for (int i = 1; i <= cuotas; i++)
                 {
                     DateTime fecha = fechaini.AddMonths(i);
-                    sql.Append(string.Format("Insert into cronograma values ({0},{1},{2},'{3}',{4},'P');", prestamo, cliente, i, fecha.ToString("yyyyMMdd"), monto));
+                    sql.Append(string.Format("Insert into cronograma values ({0},{1},{2},'{3}',{4},'P');", prestamo, cliente, i, fecha.ToString("yyyyMMdd"), monto/cuotas));
                     sql.Append(Environment.NewLine);
                 }
                 SqlConnection oCnn = new SqlConnection(Conexion.SqlCnn());

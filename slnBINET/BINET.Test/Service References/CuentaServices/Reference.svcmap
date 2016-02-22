@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5d98f2c7-f1f1-4866-9d0d-9ed5e1f8ca7e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:17982/CuentasService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CuentasService.wsdl" MetadataType="Wsdl" ID="f45e3af8-29eb-48f1-a39a-0c7d4bda73f2" SourceId="1" SourceUrl="http://localhost:17982/CuentasService.svc?wsdl" />
+    <MetadataFile FileName="CuentasService.xsd" MetadataType="Schema" ID="61b15c3d-6267-447e-bc64-a9386401088f" SourceId="1" SourceUrl="http://localhost:17982/CuentasService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CuentasService1.xsd" MetadataType="Schema" ID="ab20434c-e1a4-45f1-a17f-eb146e6cb1d2" SourceId="1" SourceUrl="http://localhost:17982/CuentasService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CuentasService2.xsd" MetadataType="Schema" ID="155aaaf2-6a11-4ba8-b5da-e891a181421a" SourceId="1" SourceUrl="http://localhost:17982/CuentasService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CuentasService.disco" MetadataType="Disco" ID="d1a16079-0564-447c-ac56-e94a7abec28c" SourceId="1" SourceUrl="http://localhost:17982/CuentasService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

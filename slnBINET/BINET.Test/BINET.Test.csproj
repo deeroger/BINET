@@ -56,8 +56,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CampañaTest.cs" />
     <Compile Include="ClienteTest.cs" />
+    <Compile Include="CronogramaTest.cs" />
+    <Compile Include="CuentaTest.cs" />
     <Compile Include="PrestamoTest.cs" />
+    <Compile Include="Service References\CampanaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CronogramaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CuentaServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\PrestamoWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,9 +94,41 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\BINET.Entities.Campana.datasource" />
     <None Include="Properties\DataSources\BINET.Entities.Cronogramas.datasource" />
+    <None Include="Properties\DataSources\BINET.Entities.Cuenta.datasource" />
     <None Include="Properties\DataSources\BINET.Entities.Prestamo.datasource" />
     <None Include="Properties\DataSources\BINET.Entities.Usuario.datasource" />
+    <None Include="Service References\CampanaWS\CampanasService.wsdl" />
+    <None Include="Service References\CampanaWS\CampanasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CampanaWS\CampanasService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CampanaWS\CampanasService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CronogramaWS\CronogramasService.wsdl" />
+    <None Include="Service References\CronogramaWS\CronogramasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CronogramaWS\CronogramasService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CronogramaWS\CronogramasService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CuentaServices\CuentasService.wsdl" />
+    <None Include="Service References\CuentaServices\CuentasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CuentaServices\CuentasService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CuentaServices\CuentasService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PrestamoWS\PrestamosService.wsdl" />
     <None Include="Service References\PrestamoWS\PrestamosService.xsd">
       <SubType>Designer</SubType>
@@ -101,12 +151,23 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BINET.Data\BINET.Data.csproj">
+      <Project>{408f4aa3-3ef9-4b3e-baee-b1831547b7cd}</Project>
+      <Name>BINET.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BINET.Entities\BINET.Entities.csproj">
       <Project>{8660e0b4-8bf9-4ce7-a309-e2d4d0ebd17d}</Project>
       <Name>BINET.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BINET.Web.Services\BINET.Web.Services.csproj">
+      <Project>{55aba3bd-47c4-48ba-a3ed-b6367ad10756}</Project>
+      <Name>BINET.Web.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CampanaWS\" />
+    <WCFMetadataStorage Include="Service References\CronogramaWS\" />
+    <WCFMetadataStorage Include="Service References\CuentaServices\" />
     <WCFMetadataStorage Include="Service References\PrestamoWS\" />
     <WCFMetadataStorage Include="Service References\UsuarioWS\" />
   </ItemGroup>
@@ -136,6 +197,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\PrestamoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CronogramaWS\CronogramasService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CronogramaWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CronogramaWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CronogramaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CuentaServices\CuentasService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CuentaServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CuentaServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CuentaServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CampanaWS\CampanasService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CampanaWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CampanaWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CampanaWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
