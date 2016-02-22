@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDAO.cs" />
+    <Compile Include="CampanaDA.cs" />
     <Compile Include="ClienteDA.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="CronogramaDAO.cs" />
@@ -67,10 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Tarjeta.hbm.xml" />
-    <EmbeddedResource Include="Cuenta.hbm.xml" />
     <EmbeddedResource Include="Moneda.hbm.xml" />
     <EmbeddedResource Include="Prestamo.hbm.xml" />
     <EmbeddedResource Include="Cliente.hbm.xml" />
+    <EmbeddedResource Include="Cuenta.hbm.xml" />
     <Content Include="ScriptSQL\BINET.sql" />
     <Content Include="ScriptSQL\Nota.txt" />
   </ItemGroup>

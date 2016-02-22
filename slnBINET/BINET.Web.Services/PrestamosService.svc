@@ -1,0 +1,6 @@
+﻿<%@ 
+    ServiceHost Language="C#" 
+    Debug="true" 
+    Service="BINET.Web.Services.PrestamosService" 
+    CodeBehind="PrestamosService.svc.cs" 
+%>

@@ -17,8 +17,8 @@ namespace BINET.Data
         {
             
            try
-            {               
-                SqlConnection oCnn = new SqlConnection(this.SqlCnn());
+            {
+                SqlConnection oCnn = new SqlConnection(Conexion.SqlCnn());
                 SqlCommand comando = new SqlCommand();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select p.codigo, p.fechor,p.monto,p.tea,p.tcea,p.cuotas from prestamo p join cliente c on (p.cliente = c.IdCliente) where c.IdCliente = @CODIGO";
@@ -28,10 +28,10 @@ namespace BINET.Data
                 SqlDataReader reader = comando.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    prestamoBE = new Prestamo();
                     lista = new List<Prestamo>();
                     while (reader.Read())
                     {
+                        prestamoBE = new Prestamo();
                         prestamoBE.Codigo = reader.GetInt32(0);
                         prestamoBE.Fechor = reader.GetDateTime(1);
                         prestamoBE.Monto = (Double)reader.GetDecimal(2);

@@ -16,7 +16,7 @@ namespace BINET.Test
         {
             // 1. Preparar la invocación(objeto, argumentos, etc )
             //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
             
             // 2. Invocar la funcionalidad(Operación del servicio)            
             //SoapServiceTest.MensajesWS.Asesor asesor = proxy.CrearAsesor("Nuevo1","b",1);
@@ -43,7 +43,7 @@ namespace BINET.Test
         {
             // 1. Preparar la invocación(objeto, argumentos, etc )
             //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
             
             // 2. Invocar la funcionalidad(Operación del servicio)            
             //SoapServiceTest.MensajesWS.Asesor asesor = proxy.CrearAsesor("Nuevo2", "b", 1);
@@ -64,7 +64,7 @@ namespace BINET.Test
         {
             // 1. Preparar la invocación(objeto, argumentos, etc )
             //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
 
             // 2. Invocar la funcionalidad(Operación del servicio)            
             // string resultado = proxy.ObtenerAsesor(1);
@@ -82,7 +82,7 @@ namespace BINET.Test
         {
             // 1. Preparar la invocación(objeto, argumentos, etc )
             //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
 
             // 2. Invocar la funcionalidad(Operación del servicio)            
             //SoapServiceTest.MensajesWS.Asesor asesor = proxy.ModificarAsesor(9, "Nuevo9", "b", 1);
@@ -102,7 +102,7 @@ namespace BINET.Test
         {
             // 1. Preparar la invocación(objeto, argumentos, etc )
             //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
             
             // 2. Invocar la funcionalidad(Operación del servicio)       
             //proxy.EliminarAsesor(10);
@@ -119,7 +119,7 @@ namespace BINET.Test
         {
             // 1. Preparar la invocación(objeto, argumentos, etc )
             //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
             
             // 2. Invocar la funcionalidad(Operación del servicio) 
       
@@ -158,7 +158,7 @@ namespace BINET.Test
         public void T4_Lista1()
         {
             //ClienteServiceClient client = new ClienteService.ClienteServiceClient();
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
             //client.CrearCliente("a", "b", "c", "d");
             DateTime fechayhora = DateTime.Now;
             Prestamo prestamo = proxy.CrearPrestamo(1, 3, 1, 5000.55, 5, 12.50, 15.50, 100.99, fechayhora, 1, 1);
@@ -174,7 +174,7 @@ namespace BINET.Test
         public void T4_Lista_EnBlanco()
         {
             //ClienteServiceClient client = new ClienteService.ClienteServiceClient();
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
             //client.CrearCliente("a", "b", "c", "d");
             //SoapServiceTest.MensajesWS.Prestamo prestamo = proxy.CrearPrestamo(5000, 5, 1234);
 
@@ -190,7 +190,7 @@ namespace BINET.Test
         [TestMethod]
         public void T5_ListarHistorial()
         {
-            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
             Prestamo[] historialPrestamos = proxy.ListarHistorial("1");
             Assert.IsFalse(historialPrestamos.Length > 0);
         }

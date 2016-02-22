@@ -14,7 +14,7 @@ namespace BINET.Data.COM
         {
             
             Usuario usuarioBE = null;
-            SqlConnection oCnn = new SqlConnection(this.SqlCnn());
+            SqlConnection oCnn = new SqlConnection(Conexion.SqlCnn());
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = "Select IdCli, UID, Password, FlaAct From Tb_Usuario Where UID=@UID And Password=@Password;";

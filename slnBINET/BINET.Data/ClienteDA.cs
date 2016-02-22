@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BINET.Data
 {
-    public class ClienteDA : Conexion
+    public class ClienteDA
     {
         Cliente clienteBE = null;
         public Cliente obtenerCliente(int codigo)
@@ -17,7 +17,7 @@ namespace BINET.Data
             
            try
             {               
-                SqlConnection oCnn = new SqlConnection(this.SqlCnn());
+                SqlConnection oCnn = new SqlConnection(Conexion.SqlCnn());
                 SqlCommand comando = new SqlCommand();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select Nombre,ApellidoPaterno,ApellidoMaterno,NumIdent,Email,Telefono from cliente where IdCliente=@CODIGO";
@@ -57,7 +57,7 @@ namespace BINET.Data
             int responseCodde = 0;
             try
             {
-                SqlConnection oCnn = new SqlConnection(this.SqlCnn());
+                SqlConnection oCnn = new SqlConnection(Conexion.SqlCnn());
                 SqlCommand comando = new SqlCommand();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "update cliente set email=@mail, telefono=@telefono where IdCliente=@codigo";
@@ -82,7 +82,7 @@ namespace BINET.Data
         public bool verificarCorreo(string mailCli01, int idCliente)
         {
             bool result=false;
-            using(SqlConnection oCnn = new SqlConnection(this.SqlCnn()))
+            using (SqlConnection oCnn = new SqlConnection(Conexion.SqlCnn()))
             {
                 using (SqlCommand comando = new SqlCommand()) 
                 {

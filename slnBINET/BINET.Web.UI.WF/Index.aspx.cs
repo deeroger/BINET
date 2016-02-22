@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BINET.Web.UI.WF.UsuarioService;
 using BINET.Entities;
 using System.ServiceModel;
+using BINET.Web.UI.WF.UsuarioWS;
 
 namespace BINET.Web.UI
 {

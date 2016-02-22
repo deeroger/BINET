@@ -56,18 +56,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Service References\MensajesWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\UsuarioService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="ClienteTest.cs" />
     <Compile Include="PrestamoTest.cs" />
+    <Compile Include="Service References\PrestamoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UsuarioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,42 +76,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\BINET.Entities.Cronogramas.datasource" />
     <None Include="Properties\DataSources\BINET.Entities.Prestamo.datasource" />
-    <None Include="Service References\MensajesWS\Prestamos.wsdl" />
-    <None Include="Service References\MensajesWS\Prestamos.xsd">
+    <None Include="Properties\DataSources\BINET.Entities.Usuario.datasource" />
+    <None Include="Service References\PrestamoWS\PrestamosService.wsdl" />
+    <None Include="Service References\PrestamoWS\PrestamosService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MensajesWS\Prestamos1.xsd">
+    <None Include="Service References\PrestamoWS\PrestamosService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MensajesWS\Prestamos2.xsd">
+    <None Include="Service References\PrestamoWS\PrestamosService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UsuarioService\UsuarioService.wsdl" />
-    <None Include="Service References\UsuarioService\UsuarioService.xsd">
+    <None Include="Service References\UsuarioWS\UsuarioService.wsdl" />
+    <None Include="Service References\UsuarioWS\UsuarioService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UsuarioService\UsuarioService1.xsd">
+    <None Include="Service References\UsuarioWS\UsuarioService1.xsd">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\MensajesWS\" />
-    <WCFMetadataStorage Include="Service References\UsuarioService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UsuarioService\UsuarioService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UsuarioService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UsuarioService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UsuarioService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Service References\UsuarioWS\UsuarioService2.xsd">
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -121,16 +107,35 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MensajesWS\Prestamos.disco" />
+    <WCFMetadataStorage Include="Service References\PrestamoWS\" />
+    <WCFMetadataStorage Include="Service References\UsuarioWS\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MensajesWS\configuration91.svcinfo" />
+    <None Include="Service References\UsuarioWS\UsuarioService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MensajesWS\configuration.svcinfo" />
+    <None Include="Service References\UsuarioWS\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MensajesWS\Reference.svcmap">
+    <None Include="Service References\UsuarioWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UsuarioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrestamoWS\PrestamosService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrestamoWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrestamoWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrestamoWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

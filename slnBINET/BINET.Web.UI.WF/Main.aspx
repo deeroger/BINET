@@ -20,7 +20,33 @@
         <br />
         <div style="width:100%">
             <div style="width:600px;margin:0 auto;">
-                <table class="table table-condensed">
+                <div id="divG" style="width:400px;margin:0 auto;">
+                    <asp:GridView ID="gvCuenta" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Width="400px">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="TipoDes" HeaderText="Tipo de Cuenta" >
+                            <ItemStyle HorizontalAlign="Left" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="MonedaDes" HeaderText="Tipo de Moneda" >
+                            <ItemStyle HorizontalAlign="Left" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="disponible" HeaderText="Saldo Disponible" DataFormatString="{0:N2}" >
+                            <ItemStyle HorizontalAlign="Right" />
+                            </asp:BoundField>
+                        </Columns>
+                        <FooterStyle BackColor="#CCCC99" />
+                        <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                        <RowStyle BackColor="#F7F7DE" />
+                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                        <SortedAscendingHeaderStyle BackColor="#848384" />
+                        <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                        <SortedDescendingHeaderStyle BackColor="#575357" />
+                    </asp:GridView>
+                </div>
+                
+                <%--<table class="table table-condensed">
                 <thead>
                   <tr>
                     <th>Tipo</th>
@@ -45,11 +71,10 @@
                     <td style="text-align:right">5.00</td>
                   </tr>
                 </tbody>
-              </table>
+              </table>--%>
+              <br />
               <div id="divPromo" class="mensaje-success" style="width:400px;margin:0 auto;" runat="server">
-                  Tienes un Préstamo Efectivo Aprobado por S/. 15,000.00
-                  <br />
-                  <a href="RegistrarPrestamo.aspx">Solicítalo aqui</a>
+                  
               </div>
           </div>  
         </div>

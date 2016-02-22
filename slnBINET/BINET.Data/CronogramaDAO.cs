@@ -19,7 +19,7 @@ namespace BINET.Data
             List<Cronogramas> liscro = null;
             try
             {
-                SqlConnection oCnn = new SqlConnection(this.SqlCnn());
+                SqlConnection oCnn = new SqlConnection(Conexion.SqlCnn());
                 SqlCommand comando = new SqlCommand();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select cuotas, fechor, monto from prestamo where codigo=@CODIGO";

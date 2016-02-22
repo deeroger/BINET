@@ -16,10 +16,16 @@ namespace BINET.Entities
         [DataMember]
         public int Moneda { get; set; }
         [DataMember]
+        public string MonedaDes { get; set; }
+        [DataMember]
         public string Tipo { get; set; }
+        [DataMember]
+        public string TipoDes { get; set; }
         [DataMember]
         public double Disponible { get; set; }
         [DataMember]
-        public string Estado { get; set; }        
+        public string Estado { get; set; }
+        [DataMember]
+        public string DesCuentaFinal { get; set; }
     }
 }

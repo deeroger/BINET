@@ -7,50 +7,96 @@
     <hr />
     <div style="width:100%">
         <div style="width:600px;margin:0 auto;">
+                <div id="divPromo" class="mensaje-success" style="width:100%;margin:0 auto;" runat="server"></div>
                 <table class="table table-condensed">
                     <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <asp:RadioButton ID="rbOpc1" runat="server" GroupName="opciones" Text="Opción 1" />
+                        </td>
+                        <td>
+                            <asp:RadioButton ID="rbOpc2" runat="server" GroupName="opciones" Text="Opción 2" />
+                        </td>
+                        <td>
+                            <asp:RadioButton ID="rbOpc3" runat="server" GroupName="opciones" Text="Opción 3" />
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Moneda</td>
-                        <td>Soles</td>
-                        <td>Soles</td>
-                        <td>Soles</td>
+                        <td>
+                            <asp:Label ID="moneda1" runat="server" Text="[Ninguno]"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="moneda2" runat="server" Text="[Ninguno]"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="moneda3" runat="server" Text="[Ninguno]"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <td>Monto del Préstamo</td>
-                        <td>5,000.00</td>
-                        <td>10,000.00</td>
-                        <td>15,000.00</td>
+                        <td>
+                            <asp:Label ID="montotot1" runat="server" Text="0.00"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="montotot2" runat="server" Text="0.00"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="montotot3" runat="server" Text="0.00"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <td>Plazo en Meses</td>
-                        <td>12</td>
-                        <td>24</td>
-                        <td>36</td>
+                        <td>
+                            <asp:Label ID="cuotas1" runat="server" Text="0"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="cuotas2" runat="server" Text="0"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="cuotas3" runat="server" Text="0"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <td>Cuota Mensual</td>
-                        <td>445.41</td>
-                        <td>473.01</td>
-                        <td>501.80</td>
+                        <td>
+                            <asp:Label ID="montoc1" runat="server" Text="0.00"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="montoc2" runat="server" Text="0.00"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="montoc3" runat="server" Text="0.00"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <td>Taza Electiva Anual (TEA) a 360 días</td>
-                        <td>12.50%</td>
-                        <td>12.50%</td>
-                        <td>12.50%</td>
+                        <td>
+                            <asp:Label ID="tea1" runat="server" Text="0.00"></asp:Label>
+                            %</td>
+                        <td>
+                            <asp:Label ID="tea2" runat="server" Text="0.00"></asp:Label>
+                            %</td>
+                        <td>
+                            <asp:Label ID="tea3" runat="server" Text="0.00"></asp:Label>
+                            %</td>
                     </tr>
                     <tr>
                         <td>Taza de Costo Efectivo Anual (TCEA)</td>
-                        <td>12.99%</td>
-                        <td>12.99%</td>
-                        <td>12.99%</td>
+                        <td>
+                            <asp:Label ID="tcea1" runat="server" Text="0.00"></asp:Label>
+                            %</td>
+                        <td>
+                            <asp:Label ID="tcea2" runat="server" Text="0.00"></asp:Label>
+                            %</td>
+                        <td>
+                            <asp:Label ID="tcea3" runat="server" Text="0.00"></asp:Label>
+                            %</td>
                     </tr>
                     <tr>
                         <td>Cuenta de Abono del Préstamo</td>
                         <td colspan="3">
                             <asp:DropDownList ID="cboCuenta" runat="server">
-                                <asp:ListItem>Seleccione una cuenta</asp:ListItem>
-                                <asp:ListItem>Ahorros Soles (191-2223-3434-3434-3434)</asp:ListItem>
-                                <asp:ListItem>Ahorros Dólares (191-2223-3434-3434-3434)</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -58,13 +104,17 @@
                         <td></td>
                         <td>Datos de Contacto</td>
                         <td>Teléfono</td>
-                        <td>05113456787</td>
+                        <td>
+                            <asp:Label ID="lbltelefono" runat="server" Text="[Ninguno]"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td>Correo</td>
-                        <td>test@upc.edu.pe</td>
+                        <td>
+                            <asp:Label ID="lblcorreo" runat="server" Text="[Ninguno]"></asp:Label>
+                        </td>
                     </tr>
                     <tr align="right">
                         <td colspan="4">

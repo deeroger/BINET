@@ -10,7 +10,7 @@ namespace BINET.Data.COM
 {
     public class Conexion
     {
-        public string SqlCnn()
+        public static string SqlCnn()
         {
             return ConfigurationManager.ConnectionStrings["servidorRemoto"].ConnectionString;
         }
