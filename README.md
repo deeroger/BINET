@@ -8,3 +8,4 @@ Garay Casimiro Roger   :   http://rgcupc.blogspot.pe/
 
 Romero Salazar Pedro   :   http://pedroromeroupc.blogspot.pe/
 
+Hugo Teccsi Veredas    :  http://hugoteccsi.blogspot.pe/
