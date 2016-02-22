@@ -72,8 +72,8 @@ namespace BINET.Web.Services
             Cuenta cuentaorigenExistente = CuentaDAO.Obtener(cuentaorigen);
             Moneda monedaExistente = MonedaDAO.Obtener(moneda);
             Cuenta cuentadestinoExistente = CuentaDAO.Obtener(cuentadestino);
-
             Cliente clienteExistente = ClienteDAO.obtenerCliente(cliente);
+            Prestamo prestamo = null;
 
             Prestamo prestamoACrear = new Prestamo() 
             { 
@@ -89,7 +89,26 @@ namespace BINET.Web.Services
                 Cliente = clienteExistente,
                 Cuentadestino  = cuentadestinoExistente
             };
-            return PrestamoDAO.Crear(prestamoACrear);
+            prestamo =  PrestamoDAO.Crear(prestamoACrear);
+            if (prestamo != null)
+            {
+                //Genera el calendario
+                CronogramaWS.CronogramasServiceClient client = new CronogramaWS.CronogramasServiceClient();
+                Cronogramas[] lista = client.RegistrarCronograma(prestamo.Codigo, prestamo.Cliente.IdCli, prestamo.Cuotas, prestamo.Fechor, Convert.ToDecimal(prestamo.Montoc));
+                if (lista != null)
+                {
+                    return prestamo;
+                }
+                else {
+                    return null;
+                }
+                
+            }
+            else 
+            {
+                return null;
+            }
+            
         }
 
         public Prestamo ObtenerPrestamo(int codigo)
@@ -141,12 +160,6 @@ namespace BINET.Web.Services
             return servicio.listaPrestamo(codigo); 
         }
 
-        public List<Cronogramas> Consulta_cronogrma(int pCodigo)
-        {         
-            CronogramaDAO listcro = new CronogramaDAO();
-            return listcro.obtenerListCronograma(pCodigo);
-        
-        }
     }
     
    

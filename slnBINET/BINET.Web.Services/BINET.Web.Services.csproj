@@ -63,8 +63,17 @@
   <ItemGroup>
     <Content Include="CampanasService.svc" />
     <Content Include="ClientesService.svc" />
+    <Content Include="CronogramasService.svc" />
     <Content Include="CuentasService.svc" />
     <Content Include="PrestamosService.svc" />
+    <Content Include="Properties\DataSources\BINET.Entities.Cronogramas.datasource" />
+    <None Include="Service References\CronogramaWS\CronogramasService.disco" />
+    <None Include="Service References\CronogramaWS\configuration91.svcinfo" />
+    <None Include="Service References\CronogramaWS\configuration.svcinfo" />
+    <None Include="Service References\CronogramaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="UsuarioService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -75,11 +84,15 @@
     <Compile Include="ClientesService.svc.cs">
       <DependentUpon>ClientesService.svc</DependentUpon>
     </Compile>
+    <Compile Include="CronogramasService.svc.cs">
+      <DependentUpon>CronogramasService.svc</DependentUpon>
+    </Compile>
     <Compile Include="CuentasService.svc.cs">
       <DependentUpon>CuentasService.svc</DependentUpon>
     </Compile>
     <Compile Include="ICampanasService.cs" />
     <Compile Include="IClientesService.cs" />
+    <Compile Include="ICronogramasService.cs" />
     <Compile Include="ICuentasService.cs" />
     <Compile Include="IPrestamosService.cs" />
     <Compile Include="IUsuarioService.cs" />
@@ -87,6 +100,11 @@
       <DependentUpon>PrestamosService.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CronogramaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioService.svc.cs">
       <DependentUpon>UsuarioService.svc</DependentUpon>
     </Compile>
@@ -95,6 +113,16 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\CronogramaWS\CronogramasService.wsdl" />
+    <None Include="Service References\CronogramaWS\CronogramasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CronogramaWS\CronogramasService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CronogramaWS\CronogramasService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,6 +139,12 @@
       <Project>{8660e0b4-8bf9-4ce7-a309-e2d4d0ebd17d}</Project>
       <Name>BINET.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CronogramaWS\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

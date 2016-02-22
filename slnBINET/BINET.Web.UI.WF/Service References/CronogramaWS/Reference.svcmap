@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="356bb01d-104a-48dd-81ba-d3a8ca855980" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:17982/CronogramasService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CronogramasService.wsdl" MetadataType="Wsdl" ID="b19df307-8db5-4154-b165-584972e204bb" SourceId="1" SourceUrl="http://localhost:17982/CronogramasService.svc?wsdl" />
+    <MetadataFile FileName="CronogramasService.xsd" MetadataType="Schema" ID="b307166a-ca63-4ab1-93da-5329e613aee1" SourceId="1" SourceUrl="http://localhost:17982/CronogramasService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CronogramasService.disco" MetadataType="Disco" ID="5f834454-9528-45c7-a35f-f8b54945fc1b" SourceId="1" SourceUrl="http://localhost:17982/CronogramasService.svc?disco" />
+    <MetadataFile FileName="CronogramasService1.xsd" MetadataType="Schema" ID="ef61de36-601d-45a5-b255-ea2929a2b1e7" SourceId="1" SourceUrl="http://localhost:17982/CronogramasService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CronogramasService2.xsd" MetadataType="Schema" ID="fb6021fd-1ef6-463c-af19-dacf998a1ec4" SourceId="1" SourceUrl="http://localhost:17982/CronogramasService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

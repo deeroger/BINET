@@ -11,7 +11,6 @@
             <Items>
                 <asp:MenuItem Text="Actualizar Datos" Value="Actualizar Datos" NavigateUrl="~/ActualizarDatos.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Consultar Historial de Prestamo" Value="Consultar Historial de Prestamo" NavigateUrl="~/ConsultarHistorialPrestamo.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Cronograma de Pago" Value="Cronograma de Pago" NavigateUrl="~/MostrarCronograma.aspx"></asp:MenuItem>
             </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
@@ -21,7 +20,7 @@
         <div style="width:100%">
             <div style="width:600px;margin:0 auto;">
                 <div id="divG" style="width:400px;margin:0 auto;">
-                    <asp:GridView ID="gvCuenta" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Width="400px">
+                    <asp:GridView ID="gvCuenta" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Width="100%">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:BoundField DataField="TipoDes" HeaderText="Tipo de Cuenta" >

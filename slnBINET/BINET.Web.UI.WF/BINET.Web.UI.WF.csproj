@@ -124,6 +124,16 @@
     <None Include="Service References\CampanaWS\CampanasService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\CronogramaWS\CronogramasService.wsdl" />
+    <None Include="Service References\CronogramaWS\CronogramasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CronogramaWS\CronogramasService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CronogramaWS\CronogramasService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\CuentaWS\CuentasService.wsdl" />
     <None Include="Service References\CuentaWS\CuentasService.xsd">
       <SubType>Designer</SubType>
@@ -169,6 +179,13 @@
     <None Include="Service References\PrestamoWS\configuration91.svcinfo" />
     <None Include="Service References\PrestamoWS\configuration.svcinfo" />
     <None Include="Service References\PrestamoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CronogramaWS\CronogramasService.disco" />
+    <None Include="Service References\CronogramaWS\configuration91.svcinfo" />
+    <None Include="Service References\CronogramaWS\configuration.svcinfo" />
+    <None Include="Service References\CronogramaWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -244,6 +261,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\CronogramaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\CuentaWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -290,6 +312,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CampanaWS\" />
+    <WCFMetadataStorage Include="Service References\CronogramaWS\" />
     <WCFMetadataStorage Include="Service References\CuentaWS\" />
     <WCFMetadataStorage Include="Service References\PrestamoWS\" />
     <WCFMetadataStorage Include="Service References\UsuarioWS\" />

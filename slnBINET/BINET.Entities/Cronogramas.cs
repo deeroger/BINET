@@ -13,14 +13,17 @@ namespace BINET.Entities
     public class Cronogramas
     {
         [DataMember]
-        public int NroCuenta { get; set; } // para todos
+        public int prestamo { get; set; }
         [DataMember]
-        public DateTime FecDesem { get; set; } // fechas desembolso.
+        public int cliente { get; set; }
         [DataMember]
-        public double MontoPrest { get; set; } // cuota mensual .
+        public int cuota { get; set; }
         [DataMember]
-        public int NroCuotas { get; set; } //periodo .
-
+        public DateTime fecha { get; set; }
+        [DataMember]
+        public decimal monto { get; set; }
+        [DataMember]
+        public string estado { get; set; }
 
     }
 }
