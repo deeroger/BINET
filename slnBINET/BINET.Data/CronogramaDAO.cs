@@ -45,10 +45,11 @@ namespace BINET.Data
 
                 double mensualidad = crono.MontoPrest / crono.NroCuotas;
                 int indice = crono.NroCuotas;
-                pago = new Cronogramas();
+              
                 liscro = new List<Cronogramas>();
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < indice; i++)
                 {
+                    pago = new Cronogramas();
                     pago.NroCuotas = i + 1;
                     pago.FecDesem = crono.FecDesem.AddMonths(i+1);
                     pago.MontoPrest = mensualidad;
