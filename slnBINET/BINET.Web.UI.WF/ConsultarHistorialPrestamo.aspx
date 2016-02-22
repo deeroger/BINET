@@ -7,6 +7,7 @@
     <hr />
     <div style="width:100%">
             <div style="width:600px;margin:0 auto;">
+            <div id="divPromo" class="mensaje-success" style="width:100%;margin:0 auto;" runat="server"></div>
             <asp:GridView ID="gvData" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Width="100%" DataKeyNames="codigo" OnRowCommand="gvData_RowCommand">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>

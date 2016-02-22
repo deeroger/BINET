@@ -139,6 +139,10 @@
       <Project>{8660e0b4-8bf9-4ce7-a309-e2d4d0ebd17d}</Project>
       <Name>BINET.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BINET.Queue\BINET.Queue.csproj">
+      <Project>{544ee1f4-0837-4ba8-ab18-d1dc9dce60b5}</Project>
+      <Name>BINET.Queue</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -20,9 +20,17 @@ namespace BINET.Web.UI.WF
             {
                 PrestamosServiceClient client = new PrestamosServiceClient();
                 Prestamo[] prestamo = client.ListarHistorial(usuario.IdCli.ToString());
-                gvData.DataSource = prestamo;
-                gvData.DataBind();
-                
+                if (prestamo == null || prestamo.Length == 0)
+                {
+                    divPromo.InnerText = "Estimado Cliente, hasta la fecha Ud. no ha adquirido préstamos";
+                    divPromo.Visible = true;
+                }
+                else 
+                {
+                    gvData.DataSource = prestamo;
+                    gvData.DataBind();
+                    divPromo.Visible = false;
+                }
             }
         }
 

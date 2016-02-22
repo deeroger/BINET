@@ -11,6 +11,7 @@ namespace BINET.Web.Services
     [ServiceContract]
     public interface IPrestamosService
     {
+        [FaultContract(typeof(ServiceException))]
         [OperationContract]
         Prestamo CrearPrestamo(int tarjeta, int cuentaorigen, int moneda, double monto, int cuotas, double tea, double tcea, double montoc, DateTime fechor, int cliente, int cuentadestino);
         [OperationContract]

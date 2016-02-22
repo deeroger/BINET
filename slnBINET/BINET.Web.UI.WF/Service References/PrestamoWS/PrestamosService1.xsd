@@ -59,25 +59,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tarjeta" nillable="true" type="tns:Tarjeta" />
+  <xs:complexType name="ServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceException" nillable="true" type="tns:ServiceException" />
   <xs:complexType name="ArrayOfPrestamo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Prestamo" nillable="true" type="tns:Prestamo" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfPrestamo" nillable="true" type="tns:ArrayOfPrestamo" />
-  <xs:complexType name="ArrayOfCronogramas">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cronogramas" nillable="true" type="tns:Cronogramas" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCronogramas" nillable="true" type="tns:ArrayOfCronogramas" />
-  <xs:complexType name="Cronogramas">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="FecDesem" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="MontoPrest" type="xs:double" />
-      <xs:element minOccurs="0" name="NroCuenta" type="xs:int" />
-      <xs:element minOccurs="0" name="NroCuotas" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Cronogramas" nillable="true" type="tns:Cronogramas" />
 </xs:schema>

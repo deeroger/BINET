@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.Text;
 using BINET.Data;
 using BINET.Entities;
+using BINET.Web.Services.CronogramaWS;
+using BINET.Queue;
 
 namespace BINET.Web.Services
 {
@@ -75,6 +77,23 @@ namespace BINET.Web.Services
             Cliente clienteExistente = ClienteDAO.obtenerCliente(cliente);
             Prestamo prestamo = null;
 
+            if (cuentadestinoExistente.Tipo.Trim().ToUpper() == "T") 
+            {
+                throw new FaultException<ServiceException>(new ServiceException() { codigo = 99, mensaje = "Cuenta destino es CTS. Seleccione otra cuenta de abono." }, new FaultReason("Validación de negocio"));
+            }
+            else if (cuentadestinoExistente.Tipo.Trim().ToUpper() == "C")
+            {
+                throw new FaultException<ServiceException>(new ServiceException() { codigo = 98, mensaje = "Cuenta destino es Crédito. Seleccione otra cuenta de abono." }, new FaultReason("Validación de negocio"));
+            }
+            else if (string.IsNullOrWhiteSpace(clienteExistente.MailCli01) || string.IsNullOrWhiteSpace(clienteExistente.TelCli01))
+            {
+                throw new FaultException<ServiceException>(new ServiceException() { codigo = 97, mensaje = "El campo teléfono o correo no pueden estar vacíos. ¡Actualice sus datos!" }, new FaultReason("Validación de negocio"));
+            }
+            else if (monto>cuentaorigenExistente.Disponible)
+            {
+                throw new FaultException<ServiceException>(new ServiceException() { codigo = 96, mensaje = "Monto de préstamo es mayor al disponible. Seleccione otra opción." }, new FaultReason("Validación de negocio"));
+            }
+
             Prestamo prestamoACrear = new Prestamo() 
             { 
                 Tarjeta = tarjetaExistente,
@@ -93,14 +112,26 @@ namespace BINET.Web.Services
             if (prestamo != null)
             {
                 //Genera el calendario
-                CronogramaWS.CronogramasServiceClient client = new CronogramaWS.CronogramasServiceClient();
-                Cronogramas[] lista = client.RegistrarCronograma(prestamo.Codigo, prestamo.Cliente.IdCli, prestamo.Cuotas, prestamo.Fechor, Convert.ToDecimal(prestamo.Montoc));
-                if (lista != null)
+                CronogramasServiceClient client = new CronogramasServiceClient();
+                try
                 {
-                    return prestamo;
+                    //throw new Exception();
+                    Cronogramas[] lista = client.RegistrarCronograma(prestamo.Codigo, prestamo.Cliente.IdCli, prestamo.Cuotas, prestamo.Fechor, Convert.ToDecimal(prestamo.Montoc));
+                    if (lista != null)
+                    {
+                        return prestamo;
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                else {
-                    return null;
+                catch
+                { 
+                    //manda a la cola
+                    CronogramaCola cola = new CronogramaCola();
+                    cola.Enviar(@".\private$\prestamoCalendarioOffline", prestamo);
+                    return prestamo;
                 }
                 
             }

@@ -3,8 +3,8 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:17982/PrestamosService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:17982/PrestamosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:17982/PrestamosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BINET.Entities" />
+      <xsd:import schemaLocation="http://localhost:17982/PrestamosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IPrestamosService_CrearPrestamo_InputMessage">
@@ -12,6 +12,9 @@
   </wsdl:message>
   <wsdl:message name="IPrestamosService_CrearPrestamo_OutputMessage">
     <wsdl:part name="parameters" element="tns:CrearPrestamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamosService_CrearPrestamo_ServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/BINET.Entities" name="detail" element="q1:ServiceException" />
   </wsdl:message>
   <wsdl:message name="IPrestamosService_ObtenerPrestamo_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerPrestamo" />
@@ -43,16 +46,11 @@
   <wsdl:message name="IPrestamosService_ListarHistorial_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarHistorialResponse" />
   </wsdl:message>
-  <wsdl:message name="IPrestamosService_Consulta_cronogrma_InputMessage">
-    <wsdl:part name="parameters" element="tns:Consulta_cronogrma" />
-  </wsdl:message>
-  <wsdl:message name="IPrestamosService_Consulta_cronogrma_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Consulta_cronogrmaResponse" />
-  </wsdl:message>
   <wsdl:portType name="IPrestamosService">
     <wsdl:operation name="CrearPrestamo">
       <wsdl:input wsaw:Action="http://tempuri.org/IPrestamosService/CrearPrestamo" message="tns:IPrestamosService_CrearPrestamo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPrestamosService/CrearPrestamoResponse" message="tns:IPrestamosService_CrearPrestamo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPrestamosService/CrearPrestamoServiceExceptionFault" name="ServiceExceptionFault" message="tns:IPrestamosService_CrearPrestamo_ServiceExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerPrestamo">
       <wsdl:input wsaw:Action="http://tempuri.org/IPrestamosService/ObtenerPrestamo" message="tns:IPrestamosService_ObtenerPrestamo_InputMessage" />
@@ -74,10 +72,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPrestamosService/ListarHistorial" message="tns:IPrestamosService_ListarHistorial_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPrestamosService/ListarHistorialResponse" message="tns:IPrestamosService_ListarHistorial_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Consulta_cronogrma">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPrestamosService/Consulta_cronogrma" message="tns:IPrestamosService_Consulta_cronogrma_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPrestamosService/Consulta_cronogrmaResponse" message="tns:IPrestamosService_Consulta_cronogrma_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPrestamosService" type="tns:IPrestamosService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -89,6 +83,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ServiceExceptionFault">
+        <soap:fault use="literal" name="ServiceExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ObtenerPrestamo">
       <soap:operation soapAction="http://tempuri.org/IPrestamosService/ObtenerPrestamo" style="document" />
@@ -128,15 +125,6 @@
     </wsdl:operation>
     <wsdl:operation name="ListarHistorial">
       <soap:operation soapAction="http://tempuri.org/IPrestamosService/ListarHistorial" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Consulta_cronogrma">
-      <soap:operation soapAction="http://tempuri.org/IPrestamosService/Consulta_cronogrma" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

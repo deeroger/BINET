@@ -1,5 +1,6 @@
 ﻿using BINET.Data;
 using BINET.Entities;
+using BINET.Queue;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,18 +14,29 @@ namespace BINET.Web.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select CronogramasService.svc or CronogramasService.svc.cs at the Solution Explorer and start debugging.
     public class CronogramasService : ICronogramasService
     {
+        CronogramaDAO dao = new CronogramaDAO();
 
         public IList<Cronogramas> ConsultarCronograma(int prestamo, int cliente)
-        {
-            CronogramaDAO dao = new CronogramaDAO();
+        {   
             return dao.ConsultarCronograma(prestamo, cliente);
         }
 
 
         public IList<Cronogramas> RegistrarCronograma(int prestamo, int cliente, int cuotas, DateTime fechaini, decimal monto)
         {
-            CronogramaDAO dao = new CronogramaDAO();
             return dao.RegistarCronograma(prestamo, cliente, cuotas, fechaini, monto);
+        }
+
+
+        public IList<Prestamo> SincronizarCronograma()
+        {
+            CronogramaCola cola = new CronogramaCola();
+            List<Prestamo> lista = cola.Recibir(@".\private$\prestamoCalendarioOffline");
+            foreach (var item in lista)
+            {
+                dao.RegistarCronograma(item.Codigo, item.Cliente.IdCli, item.Cuotas, item.Fechor, Convert.ToDecimal(item.Montoc));
+            }
+            return lista;
         }
     }
 }

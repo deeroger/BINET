@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.ServiceModel;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.UI;
@@ -130,11 +131,20 @@ namespace BINET.Web.UI.WF
                 return;
             }
             PrestamosServiceClient client = new PrestamosServiceClient();
-            Prestamo prestamo = client.CrearPrestamo(Convert.ToInt32(campana.tarjeta), Convert.ToInt32(campana.cuenta), campana.moneda, monto, cuotas, tea, tcea, montoc, fechayhora, usuario.IdCli, cuenta);
-            if(prestamo!=null){
-                Session["Prestamo"] = prestamo;
-                Response.Redirect("ConfirmarPrestamo.aspx");
+            try
+            {
+                Prestamo prestamo = client.CrearPrestamo(Convert.ToInt32(campana.tarjeta), Convert.ToInt32(campana.cuenta), campana.moneda, monto, cuotas, tea, tcea, montoc, fechayhora, usuario.IdCli, cuenta);
+                if (prestamo != null)
+                {
+                    Session["Prestamo"] = prestamo;
+                    Response.Redirect("ConfirmarPrestamo.aspx");
+                }
             }
+            catch (FaultException<ServiceException> ex)
+            {
+                MostrarMensaje(ex.Detail.mensaje);
+            }
+            
         }
 
         public void MostrarMensaje(string mensaje)

@@ -16,6 +16,7 @@ namespace BINET.Web.UI.WF.PrestamoWS {
     public interface IPrestamosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamosService/CrearPrestamo", ReplyAction="http://tempuri.org/IPrestamosService/CrearPrestamoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(BINET.Entities.ServiceException), Action="http://tempuri.org/IPrestamosService/CrearPrestamoServiceExceptionFault", Name="ServiceException", Namespace="http://schemas.datacontract.org/2004/07/BINET.Entities")]
         BINET.Entities.Prestamo CrearPrestamo(int tarjeta, int cuentaorigen, int moneda, double monto, int cuotas, double tea, double tcea, double montoc, System.DateTime fechor, int cliente, int cuentadestino);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamosService/CrearPrestamo", ReplyAction="http://tempuri.org/IPrestamosService/CrearPrestamoResponse")]
@@ -50,12 +51,6 @@ namespace BINET.Web.UI.WF.PrestamoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamosService/ListarHistorial", ReplyAction="http://tempuri.org/IPrestamosService/ListarHistorialResponse")]
         System.Threading.Tasks.Task<BINET.Entities.Prestamo[]> ListarHistorialAsync(string codigo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamosService/Consulta_cronogrma", ReplyAction="http://tempuri.org/IPrestamosService/Consulta_cronogrmaResponse")]
-        BINET.Entities.Cronogramas[] Consulta_cronogrma(int pCodigo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamosService/Consulta_cronogrma", ReplyAction="http://tempuri.org/IPrestamosService/Consulta_cronogrmaResponse")]
-        System.Threading.Tasks.Task<BINET.Entities.Cronogramas[]> Consulta_cronogrmaAsync(int pCodigo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -131,14 +126,6 @@ namespace BINET.Web.UI.WF.PrestamoWS {
         
         public System.Threading.Tasks.Task<BINET.Entities.Prestamo[]> ListarHistorialAsync(string codigo) {
             return base.Channel.ListarHistorialAsync(codigo);
-        }
-        
-        public BINET.Entities.Cronogramas[] Consulta_cronogrma(int pCodigo) {
-            return base.Channel.Consulta_cronogrma(pCodigo);
-        }
-        
-        public System.Threading.Tasks.Task<BINET.Entities.Cronogramas[]> Consulta_cronogrmaAsync(int pCodigo) {
-            return base.Channel.Consulta_cronogrmaAsync(pCodigo);
         }
     }
 }

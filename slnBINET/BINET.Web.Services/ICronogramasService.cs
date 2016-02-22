@@ -17,5 +17,8 @@ namespace BINET.Web.Services
 
         [OperationContract]
         IList<Cronogramas> RegistrarCronograma(int prestamo, int cliente, int cuotas, DateTime fechaini, decimal monto);
+
+        [OperationContract]
+        IList<Prestamo> SincronizarCronograma();
     }
 }

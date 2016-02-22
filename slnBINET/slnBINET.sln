@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Web.UI.WF", "BINET.Web.UI.WF\BINET.Web.UI.WF.csproj", "{FB392A58-9868-44FB-976F-7D12B4A4159C}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{
 		..\Librerias\Iesi.Collections.dll = ..\Librerias\Iesi.Collections.dll
 		..\Librerias\NHibernate.dll = ..\Librerias\NHibernate.dll
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BINET.Queue", "BINET.Queue\BINET.Queue.csproj", "{544EE1F4-0837-4BA8-AB18-D1DC9DCE60B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{5723A667-E641-475C-AF00-C885797D154D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{5723A667-E641-475C-AF00-C885797D154D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5723A667-E641-475C-AF00-C885797D154D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544EE1F4-0837-4BA8-AB18-D1DC9DCE60B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544EE1F4-0837-4BA8-AB18-D1DC9DCE60B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544EE1F4-0837-4BA8-AB18-D1DC9DCE60B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544EE1F4-0837-4BA8-AB18-D1DC9DCE60B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
