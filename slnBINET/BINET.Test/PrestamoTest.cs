@@ -185,6 +185,16 @@ namespace BINET.Test
             //Assert.IsTrue(prestamos.Length > 0);            
             Assert.IsFalse(prestamos.Length > 0);
         }
+
+
+        [TestMethod]
+        public void T5_ListarHistorial()
+        {
+            MensajesWS.PrestamosClient proxy = new MensajesWS.PrestamosClient();
+            Prestamo[] historialPrestamos = proxy.ListarHistorial("1");
+            Assert.IsFalse(historialPrestamos.Length > 0);
+        }
+
     }
 }
 

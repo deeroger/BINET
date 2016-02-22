@@ -21,7 +21,7 @@ namespace BINET.Data
                 SqlConnection oCnn = new SqlConnection(this.SqlCnn());
                 SqlCommand comando = new SqlCommand();
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select p.fechor,p.monto,p.tea,p.tcea,p.cuotas from prestamo p join cliente c on (p.cliente = c.IdCliente) where c.IdCliente = @CODIGO";
+                comando.CommandText = "select p.codigo, p.fechor,p.monto,p.tea,p.tcea,p.cuotas from prestamo p join cliente c on (p.cliente = c.IdCliente) where c.IdCliente = @CODIGO";
                 comando.Connection = oCnn;
                 comando.Parameters.AddWithValue("@CODIGO", codigo);
                 oCnn.Open();
@@ -32,11 +32,12 @@ namespace BINET.Data
                     lista = new List<Prestamo>();
                     while (reader.Read())
                     {
-                        prestamoBE.Fechor = reader.GetDateTime(0);
-                        prestamoBE.Monto = (Double)reader.GetDecimal(1);
-                        prestamoBE.Tea = (Double)reader.GetDecimal(2);
-                        prestamoBE.Tcea = (Double)reader.GetDecimal(3);
-                        prestamoBE.Cuotas = reader.GetInt32(4);
+                        prestamoBE.Codigo = reader.GetInt32(0);
+                        prestamoBE.Fechor = reader.GetDateTime(1);
+                        prestamoBE.Monto = (Double)reader.GetDecimal(2);
+                        prestamoBE.Tea = (Double)reader.GetDecimal(3);
+                        prestamoBE.Tcea = (Double)reader.GetDecimal(4);
+                        prestamoBE.Cuotas = reader.GetInt32(5);
                         lista.Add(prestamoBE);
                     }
                     

@@ -44,6 +44,12 @@ namespace BINET.Test.MensajesWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamos/ListarPrestamos", ReplyAction="http://tempuri.org/IPrestamos/ListarPrestamosResponse")]
         System.Threading.Tasks.Task<BINET.Entities.Prestamo[]> ListarPrestamosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamos/ListarHistorial", ReplyAction="http://tempuri.org/IPrestamos/ListarHistorialResponse")]
+        BINET.Entities.Prestamo[] ListarHistorial(string codigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamos/ListarHistorial", ReplyAction="http://tempuri.org/IPrestamos/ListarHistorialResponse")]
+        System.Threading.Tasks.Task<BINET.Entities.Prestamo[]> ListarHistorialAsync(string codigo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +117,14 @@ namespace BINET.Test.MensajesWS {
         
         public System.Threading.Tasks.Task<BINET.Entities.Prestamo[]> ListarPrestamosAsync() {
             return base.Channel.ListarPrestamosAsync();
+        }
+        
+        public BINET.Entities.Prestamo[] ListarHistorial(string codigo) {
+            return base.Channel.ListarHistorial(codigo);
+        }
+        
+        public System.Threading.Tasks.Task<BINET.Entities.Prestamo[]> ListarHistorialAsync(string codigo) {
+            return base.Channel.ListarHistorialAsync(codigo);
         }
     }
 }
