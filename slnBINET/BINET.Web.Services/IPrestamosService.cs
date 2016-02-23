@@ -20,8 +20,8 @@ namespace BINET.Web.Services
         Prestamo ModificarPrestamo(int codigo, int tarjeta, int cuentaorigen, int moneda, double monto, int cuotas, double tea, double tcea, double montoc, DateTime fechor, int cliente, int cuentadestino);
         [OperationContract]
         void EliminarPrestamo(int codigo);
-        [OperationContract]
-        List<Prestamo> ListarPrestamos();
+        //[OperationContract]
+        //List<Prestamo> ListarPrestamos();
         [OperationContract]
         List<Prestamo> ListarHistorial(string codigo);
     }

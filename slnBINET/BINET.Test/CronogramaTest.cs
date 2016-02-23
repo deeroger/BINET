@@ -15,9 +15,9 @@ namespace BINET.Test
         public void ConsultarCronograma()
         {
             
-              CronogramaWS.CronogramasServiceClient  proxy = new CronogramaWS.CronogramasServiceClient();
-            Cronogramas[] ConsultarCronograma = proxy.ConsultarCronograma(1, 1);
-            Assert.IsFalse(ConsultarCronograma.Length == 0);
+            CronogramaWS.CronogramasServiceClient  proxy = new CronogramaWS.CronogramasServiceClient();
+            Cronogramas[] ConsultarCronograma = proxy.ConsultarCronograma(9, 1);
+            Assert.IsFalse(ConsultarCronograma.Length > 0);
 
         }
         [TestMethod]

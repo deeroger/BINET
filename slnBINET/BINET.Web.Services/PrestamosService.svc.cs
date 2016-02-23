@@ -180,10 +180,10 @@ namespace BINET.Web.Services
             PrestamoDAO.Eliminar(prestamoExistente);
         }
 
-        public List<Prestamo> ListarPrestamos()
-        {
-            return PrestamoDAO.ListarTodos().ToList(); 
-         }
+        //public List<Prestamo> ListarPrestamos()
+        //{
+        //    return PrestamoDAO.ListarTodos().ToList(); 
+        // }
 
         public List<Prestamo> ListarHistorial(string codigo)
         {

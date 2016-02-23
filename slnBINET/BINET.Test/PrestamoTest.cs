@@ -9,7 +9,9 @@ namespace BINET.Test
 {
     [TestClass]
     public class PrestamoTest
-    {   
+    {
+        int codigo = 9;
+
         //verificar la creación
         [TestMethod]
         public void T1_Crea()
@@ -37,28 +39,6 @@ namespace BINET.Test
             Assert.AreEqual(5000.99, prestamo.Monto);
         }
 
-        //otra forma de verificar la creación
-        [TestMethod]
-        public void T1_Crea2()
-        {
-            // 1. Preparar la invocación(objeto, argumentos, etc )
-            //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
-            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
-            
-            // 2. Invocar la funcionalidad(Operación del servicio)            
-            //SoapServiceTest.MensajesWS.Asesor asesor = proxy.CrearAsesor("Nuevo2", "b", 1);
-            //SoapServiceTest.MensajesWS.Asesor asesor2 = proxy.ObtenerAsesor(9);
-            DateTime fechayhora = DateTime.Now;
-
-            Prestamo prestamo = proxy.CrearPrestamo(1, 3, 1, 8000.99, 4, 12.50, 15.50, 100.99, fechayhora, 1, 1);
-
-            Prestamo prestamo2 = proxy.ObtenerPrestamo(13);
-            
-            // 3. Verificar/validar el resultado esperado
-            //Assert.AreEqual(asesor2.Nombre, asesor.Nombre);
-            Assert.AreEqual(prestamo2.Monto, prestamo.Monto);
-        }
-
         [TestMethod]
         public void T2_Obtener()
         {
@@ -69,11 +49,11 @@ namespace BINET.Test
             // 2. Invocar la funcionalidad(Operación del servicio)            
             // string resultado = proxy.ObtenerAsesor(1);
             //SoapServiceTest.MensajesWS.Asesor asesor  = proxy.ObtenerAsesor(1);
-            Prestamo prestamo = proxy.ObtenerPrestamo(13);
+            Prestamo prestamo = proxy.ObtenerPrestamo(codigo);
 
             // 3. Verificar/validar el resultado esperado
             //Assert.AreEqual("Hector", prestamo.Nombre);
-            Assert.AreEqual(8000.99, prestamo.Monto);
+            Assert.AreEqual(codigo, prestamo.Codigo);
         }
 
         //verificar la modificación
@@ -88,29 +68,12 @@ namespace BINET.Test
             //SoapServiceTest.MensajesWS.Asesor asesor = proxy.ModificarAsesor(9, "Nuevo9", "b", 1);
             //SoapServiceTest.MensajesWS.Asesor asesor2 = proxy.ObtenerAsesor(9);
             DateTime fechayhora = DateTime.Now;
-            Prestamo prestamo = proxy.ModificarPrestamo(13, 1, 3, 1, 15000.55, 5, 12.50, 15.50, 100.99, fechayhora, 1, 1);
-            Prestamo prestamo2 = proxy.ObtenerPrestamo(13);            
+            Prestamo prestamo = proxy.ModificarPrestamo(codigo, 1, 3, 1, 15000.55, 5, 12.50, 15.50, 100.99, fechayhora, 1, 1);
+            Prestamo prestamo2 = proxy.ObtenerPrestamo(codigo);            
             
             // 3. Verificar/validar el resultado esperado
             //Assert.AreEqual(prestamo2.Nombre, prestamo.Nombre);
             Assert.AreEqual(prestamo2.Monto, prestamo.Monto);
-        }
-
-        //verificar la eliminación
-        [TestMethod]
-        public void T3_Elimina()
-        {
-            // 1. Preparar la invocación(objeto, argumentos, etc )
-            //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
-            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
-            
-            // 2. Invocar la funcionalidad(Operación del servicio)       
-            //proxy.EliminarAsesor(10);
-            proxy.EliminarPrestamo(13); 
-            //SoapServiceTest.MensajesWS.Asesor asesor = proxy.EliminarAsesor(10);
-            
-            // 3. Verificar/validar el resultado esperado
-            //Assert.AreEqual(asesor2.Nombre, asesor.Nombre);
         }
 
         //verificar lista
@@ -155,22 +118,6 @@ namespace BINET.Test
         }
         
         [TestMethod]
-        public void T4_Lista1()
-        {
-            //ClienteServiceClient client = new ClienteService.ClienteServiceClient();
-            PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
-            //client.CrearCliente("a", "b", "c", "d");
-            DateTime fechayhora = DateTime.Now;
-            Prestamo prestamo = proxy.CrearPrestamo(1, 3, 1, 5000.55, 5, 12.50, 15.50, 100.99, fechayhora, 1, 1);
-            
-            //ClienteService.Cliente[] clientes = client.ListarClientes();
-            Prestamo[] prestamos = proxy.ListarPrestamos();
-
-            //Assert.IsTrue(clientes.Length > 0);
-            Assert.IsTrue(prestamos.Length > 0);
-        }
-        
-        [TestMethod]
         public void T4_Lista_EnBlanco()
         {
             //ClienteServiceClient client = new ClienteService.ClienteServiceClient();
@@ -192,8 +139,41 @@ namespace BINET.Test
         {
             PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
             Prestamo[] historialPrestamos = proxy.ListarHistorial("1");
-            Assert.IsFalse(historialPrestamos.Length > 0);
+            Assert.IsTrue(historialPrestamos.Length > 0);
         }
+
+        ////verificar la eliminación
+        //[TestMethod]
+        //public void T3_Elimina()
+        //{
+        //    // 1. Preparar la invocación(objeto, argumentos, etc )
+        //    //MensajesWS.AsesoresClient proxy = new MensajesWS.AsesoresClient();
+        //    PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
+
+        //    // 2. Invocar la funcionalidad(Operación del servicio)       
+        //    //proxy.EliminarAsesor(10);
+        //    proxy.EliminarPrestamo(codigo); 
+        //    //SoapServiceTest.MensajesWS.Asesor asesor = proxy.EliminarAsesor(10);
+
+        //    // 3. Verificar/validar el resultado esperado
+        //    //Assert.AreEqual(asesor2.Nombre, asesor.Nombre);
+        //}
+
+        //[TestMethod]
+        //public void T4_Lista1()
+        //{
+        //    //ClienteServiceClient client = new ClienteService.ClienteServiceClient();
+        //    PrestamoWS.PrestamosServiceClient proxy = new PrestamoWS.PrestamosServiceClient();
+        //    //client.CrearCliente("a", "b", "c", "d");
+        //    DateTime fechayhora = DateTime.Now;
+        //    Prestamo prestamo = proxy.CrearPrestamo(1, 3, 1, 5000.55, 5, 12.50, 15.50, 100.99, fechayhora, 1, 1);
+
+        //    //ClienteService.Cliente[] clientes = client.ListarClientes();
+        //    Prestamo[] prestamos = proxy.ListarPrestamos();
+
+        //    //Assert.IsTrue(clientes.Length > 0);
+        //    Assert.IsTrue(prestamos.Length > 0);
+        //}
 
     }
 }
