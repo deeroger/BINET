@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b2038cb3-c27e-4ce3-8d0a-84bbc1b4fe2e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:17982/CampanasService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CampanasService.xsd" MetadataType="Schema" ID="0bdc73cb-5837-4fc1-845d-89e9fa9a6f36" SourceId="1" SourceUrl="http://localhost:17982/CampanasService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CampanasService.wsdl" MetadataType="Wsdl" ID="ca427c6c-5ad2-4a48-a32f-5306b2bb9323" SourceId="1" SourceUrl="http://localhost:17982/CampanasService.svc?wsdl" />
+    <MetadataFile FileName="CampanasService.disco" MetadataType="Disco" ID="e02b6dd2-1cae-4ad4-a57d-6098aa45b16c" SourceId="1" SourceUrl="http://localhost:17982/CampanasService.svc?disco" />
+    <MetadataFile FileName="CampanasService1.xsd" MetadataType="Schema" ID="02cac904-d4db-4091-a349-65e92705c76b" SourceId="1" SourceUrl="http://localhost:17982/CampanasService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CampanasService2.xsd" MetadataType="Schema" ID="51c05602-b859-4dd8-b4ee-bbcb1c7cde8d" SourceId="1" SourceUrl="http://localhost:17982/CampanasService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
