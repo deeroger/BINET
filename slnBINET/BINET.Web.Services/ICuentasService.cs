@@ -15,7 +15,7 @@ namespace BINET.Web.Services
         [OperationContract]
         IList<Cuenta> ObtenerCuentas(int cliente);
 
-        [OperationContract]
-        IList<Cuenta> ObtenerCuentasPrestamo(int cliente);
+        //[OperationContract]
+        //IList<Cuenta> ObtenerCuentasPrestamo(int cliente);
     }
 }

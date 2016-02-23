@@ -20,10 +20,10 @@ namespace BINET.Web.Services
             return dao.ObtenerCuentas(cliente);
         }
 
-        public IList<Cuenta> ObtenerCuentasPrestamo(int cliente)
-        {
-            CuentaDAO dao = new CuentaDAO();
-            return dao.ObtenerCuentas(cliente);
-        }
+        //public IList<Cuenta> ObtenerCuentasPrestamo(int cliente)
+        //{
+        //    CuentaDAO dao = new CuentaDAO();
+        //    return dao.ObtenerCuentas(cliente);
+        //}
     }
 }
