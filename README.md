@@ -5,6 +5,7 @@ Blogs
 *****
 
 Garay Casimiro Roger   :   http://rgcupc.blogspot.pe/
+                           http://rgcupc-cloudcomputing.blogspot.com
 
 Romero Salazar Pedro   :   http://pedroromeroupc.blogspot.pe/
 
